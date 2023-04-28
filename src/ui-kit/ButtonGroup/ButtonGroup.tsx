@@ -15,6 +15,7 @@ const ButtonGroup: React.FC<IButtonGroupProps> = ({
   const [selectedOption, setSelectedOption] = useState(options[0])
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     setSelectedOption(event.target.dataset.title!)
   }
 

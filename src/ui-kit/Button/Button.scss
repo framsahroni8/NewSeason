@@ -13,6 +13,7 @@
   border: 1px solid $color-primary;
   outline: transparent;
   transition: all 0.3s;
+  line-height: normal;
   cursor: pointer;
 
   &-Text {
@@ -21,6 +22,8 @@
 
   &:hover {
     background-color: $color-primary-hover;
+    border-color: $color-primary-hover;
+    ;
   }
 
   &#{$this}__disabled {

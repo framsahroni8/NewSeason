@@ -1,1 +1,28 @@
-.NavBar {}
+.navbar-logo {
+  max-width: 10%;
+  cursor: pointer;
+}
+
+.navbar-menu:hover {
+  color: #FDD8CD;
+  fill: #FDD8CD;
+  border-bottom: 2.5px solid #FDD8CD;
+}
+
+.menu li:active {
+  color: #FDD8CD;
+  fill: #FDD8CD;
+  border-bottom: 2.5px solid #FDD8CD;
+}
+
+.btn-navbar {
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  // background-color: #D83327;
+  font-size: 0.8rem;
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 0px 10px 30px -9px rgba(0, 0, 0, 0.16);
+  padding: 10px 30px 10px 30px !important;
+}
