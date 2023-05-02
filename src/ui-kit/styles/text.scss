@@ -1,7 +1,7 @@
-$base-font-family: "Roboto", sans-serif;
+$base-font-family: "Soin Sans Neue", sans-serif;
 
-/* Roboto/12/Regular */
-@mixin roboto-12-regular {
+/* SoinSansNeue/12/Regular */
+@mixin SoinSansNeue-12-regular {
   font-family: $base-font-family;
   font-size: 12px;
   font-weight: 400;
@@ -9,8 +9,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* Roboto/14/Regular */
-@mixin roboto-14-regular {
+/* SoinSansNeue/14/Regular */
+@mixin SoinSansNeue-14-regular {
   font-family: $base-font-family;
   font-size: 14px;
   font-weight: 400;
@@ -18,8 +18,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/14/Bold */
-@mixin roboto-14-bold {
+/* SoinSansNeue/14/Bold */
+@mixin SoinSansNeue-14-bold {
   font-family: $base-font-family;
   font-size: 14px;
   font-weight: 700;
@@ -27,8 +27,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/16/Regular */
-@mixin roboto-16-regular {
+/* SoinSansNeue/16/Regular */
+@mixin SoinSansNeue-16-regular {
   font-family: $base-font-family;
   font-size: 16px;
   font-weight: 400;
@@ -36,8 +36,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/16/Bold */
-@mixin roboto-16-bold {
+/* SoinSansNeue/16/Bold */
+@mixin SoinSansNeue-16-bold {
   font-family: $base-font-family;
   font-size: 16px;
   font-weight: 700;
@@ -45,8 +45,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* Roboto/28/Medium */
-@mixin roboto-28-medium {
+/* SoinSansNeue/28/Medium */
+@mixin SoinSansNeue-28-medium {
   font-family: $base-font-family;
   font-size: 28px;
   font-weight: 500;
@@ -54,8 +54,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/24/Regular */
-@mixin roboto-24-regular {
+/* SoinSansNeue/24/Regular */
+@mixin SoinSansNeue-24-regular {
   font-family: $base-font-family;
   font-size: 24px;
   font-weight: 400;
@@ -63,10 +63,37 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/24/Bold */
-@mixin roboto-24-bold {
+/* SoinSansNeue/24/Bold */
+@mixin SoinSansNeue-24-bold {
   font-family: $base-font-family;
   font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* SoinSansNeue/38/Bold */
+@mixin SoinSansNeue-38-bold {
+  font-family: $base-font-family;
+  font-size: 38px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* SoinSansNeue/42/Bold */
+@mixin SoinSansNeue-42-bold {
+  font-family: $base-font-family;
+  font-size: 42px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* SoinSansNeue/48/Bold */
+@mixin SoinSansNeue-48-bold {
+  font-family: $base-font-family;
+  font-size: 48px;
   font-weight: 700;
   font-style: normal;
   line-height: 1.25;

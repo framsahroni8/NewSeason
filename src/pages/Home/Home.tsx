@@ -1,7 +1,10 @@
+import { Headline } from 'components/Headline';
 import './Home.scss';
 
 const Home = () => {
-  return <h1>Welcome to the Home page!</h1>;
+  return (
+    <Headline/>
+  )
 };
 
 export default Home;

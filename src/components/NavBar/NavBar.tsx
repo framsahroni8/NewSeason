@@ -12,26 +12,26 @@ const navigationData = [
 
 const Navbar = () => {
   const navigate = useNavigate()
-  const [activePage, setActivePage] = useState('home') 
+  const [activePage, setActivePage] = useState('home')
 
   const handleOrder = () => {
     navigate('/order')
   }
 
-  const handleLogo= () => {
+  const handleLogo = () => {
     navigate('/')
   }
 
-  const handleNavbarMenu = (name : string) =>{
-    console.log('kepanggil'+name)
+  const handleNavbarMenu = (name: string) => {
+    console.log('kepanggil' + name)
     setActivePage(name)
   }
 
   return (
     <>
       <div className='bg-primary text-base-100-content'>
-        <div className='navbar container mx-auto px-40'>
-          <div className='navbar-start'>
+        <div className='navbar container mx-auto'>
+          <div className='navbar-start navbar-responsive w-full'>
             <div className='dropdown'>
               <label tabIndex={0} className='btn btn-ghost lg:hidden'>
                 <svg
@@ -51,7 +51,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52'
+                className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52 pr-[200px]'
               >
                 {navigationData.map((item) => (
                   <li key={item.name}>
@@ -60,14 +60,22 @@ const Navbar = () => {
                 ))}
               </ul>
             </div>
-            <img src={Logo} className='btn-ghost navbar-logo' onClick={handleLogo}/>
-           
+            <img
+              src={Logo}
+              className=' navbar-logo'
+              onClick={handleLogo}
+            />
           </div>
-          <div className='navbar-end'>
-             <ul className='menu menu-horizontal px-1 hidden lg:flex'>
+          <div>
+            <ul className='menu menu-horizontal px-1 hidden lg:flex'>
               {navigationData.map((item) => (
-                <li className={activePage === item.name ? 'navbar-menu active' : 'navbar-menu'} key={item.name}>
-                  <Link onClick={() => handleNavbarMenu(item.name)} to={item.href}>{item.name}</Link>
+                <li
+                  className={activePage === item.name ? 'navbar-menu active' : 'navbar-menu'}
+                  key={item.name}
+                >
+                  <Link onClick={() => handleNavbarMenu(item.name)} to={item.href}>
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>

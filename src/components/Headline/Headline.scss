@@ -1,0 +1,66 @@
+@import 'ui-kit/styles';
+
+.headlineContainer{
+    display: flex;
+}
+
+.headlineImage{
+    width:70%;
+}
+
+.headlineWidget{
+    display: flex;
+    width: 30%;
+    background-color: $color-headline;
+    align-content: flex-end;
+    align-items: flex-end;
+}
+
+.headlineText{
+    color: $color-primary;
+    padding: 0% 5% 0% 5%;
+    &-header{
+        @include SoinSansNeue-48-bold;
+    }
+
+    &-body{
+        @include SoinSansNeue-24-bold;
+    }
+}
+
+@media(max-width:1024px){
+    .headlineContainer{
+        display: inline-block;
+    }
+    
+    .headlineImage{
+        width:100%;
+    }
+    
+    .headlineWidget{
+        display: flex;
+        width: 100%;
+        background-color: $color-headline;
+        align-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .headlineText{
+        padding: 0% 5% 0% 5%;
+        &-header{
+            @include SoinSansNeue-38-bold;
+        }
+    
+        &-body{
+            @include SoinSansNeue-16-bold;
+        }
+    }
+}
+
+@media(max-width: 767px){
+    .headlineText{
+        &-header{
+            @include SoinSansNeue-42-bold;
+        }
+    }
+}

@@ -1,23 +1,41 @@
+@import 'ui-kit/styles';
+
 .navbar-logo {
-  max-width: 10%;
   cursor: pointer;
+  width: 10%;
+  @media (max-width:767px) {
+    justify-content: center !important;
+     width: 40%;
+  }
+  @media(max-width:1024px){
+    width: 30%;
+  }
 }
 
+
 .navbar-menu:hover {
-  color: #FDD8CD;
-  fill: #FDD8CD;
-  border-bottom: 2.5px solid #FDD8CD;
+  color: $color-headline;
+  fill: $color-headline;
+  border-bottom: 2.5px solid $color-headline;
 }
 
 .menu li:active {
-  color: #FDD8CD;
-  fill: #FDD8CD;
-  border-bottom: 2.5px solid #FDD8CD;
+  color: $color-headline;
+  fill: $color-headline;
+  border-bottom: 2.5px solid $color-headline;
+}
+
+.navbar-responsive{
+  padding-left: 200px;
+  @media (max-width:1024px) {
+    padding: 0%;
+    justify-content: space-between !important;
+  }
 }
 
 .btn-navbar {
-  fill: #FFFFFF;
-  color: #FFFFFF;
+  fill: $color-main-white;
+  color: $color-main-white;
   // background-color: #D83327;
   font-size: 0.8rem;
   border-style: solid;
@@ -25,4 +43,8 @@
   border-radius: 25px 25px 25px 25px;
   box-shadow: 0px 10px 30px -9px rgba(0, 0, 0, 0.16);
   padding: 10px 30px 10px 30px !important;
+
+  @media (max-width: 1024px) {
+    visibility: hidden;
+  }
 }
