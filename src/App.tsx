@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { store } from 'utils/redux/store'
 import './App.css'
 import MainRoutes from 'components/MainRoutes/MainRoutes'
+import { Footer } from 'components/Footer'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <BrowserRouter>
           <NavBar />
           <MainRoutes />
-          {/* <Footer /> */}
+          <Footer />
         </BrowserRouter>
       </div>
     </Provider>

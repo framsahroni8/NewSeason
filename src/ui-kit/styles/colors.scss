@@ -37,6 +37,15 @@ $color-light-red: rgba(251, 228, 227, 1);
 $color-light-red-hover: rgba(250, 219, 218, 1);
 /* #fadbda */
 
+/* Green */
+$color-success: #42C16D;
+$color-success-pressed: #3D955B;
+$color-success-hovered: #92EAB0;
+$color-success-outline: #C9F4D8;
+$color-success-surface: #DEF9E7;
+$color-success-focused: rgba(92, 223, 137, 0.2);
+$color-modal: rgba(30, 190, 165, 1) ; /*#1EBEA5*/
+
 /* Other */
 $color-bg-input: rgba(236, 241, 247, 1);
 /* #ecf1f7 */
@@ -44,3 +53,5 @@ $color-bg-input-hover: rgba(228, 235, 243, 1);
 /* #e4ebf3 */
 $color-headline: rgba(253, 216, 205, 1);
 /* #FDD8CD */
+$color-footer: rgba(0, 46, 89, 1);
+/*#002E59*/

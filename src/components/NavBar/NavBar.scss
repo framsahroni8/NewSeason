@@ -26,9 +26,7 @@
 }
 
 .navbar-responsive{
-  padding-left: 200px;
   @media (max-width:1024px) {
-    padding: 0%;
     justify-content: space-between !important;
   }
 }

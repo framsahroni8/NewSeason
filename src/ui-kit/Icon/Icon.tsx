@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import './Icon.scss'
 import { IconType, iconTypes } from './IconType'
 
-export type IconSizeType = 'small'
+export type IconSizeType = 'small' | 'regular' | 'medium' | 'large'
 
 export interface IIconProps extends DOMAttributes<HTMLSpanElement> {
   className?: string

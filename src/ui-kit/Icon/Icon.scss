@@ -16,5 +16,17 @@
       width: 12px;
       height: 12px;
     }
-  }
+    &__regular {
+      width: 25px;
+      height: 25px;
+    }
+    &__medium{
+      width: 30px;
+      height: 30px;
+    }
+    &__large{
+      width: 60px;
+      height: 60px;
+    }
+}
 }
