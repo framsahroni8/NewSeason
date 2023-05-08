@@ -1,0 +1,17 @@
+@import 'ui-kit/styles';
+
+.dividerLine{
+    border-top: 4px solid $color-primary;
+    width: 7%;
+
+    @media(max-width:1024px){
+        width: 25%;
+    }
+}
+
+.contactDivider{
+
+@media(max-width:1024px){
+    padding: 0;
+}
+}

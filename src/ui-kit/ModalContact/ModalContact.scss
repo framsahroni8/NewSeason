@@ -1,0 +1,53 @@
+@import 'ui-kit/styles';
+
+.modalPosition {
+  display: flex;
+  justify-content: center !important;
+  padding-top: 20px;
+}
+
+.modal-box-hard {
+  background-color: $color-modal;
+  width: 70vw;
+  border-radius: 15px;
+}
+
+.modalContainer {
+  padding: 15px;
+  text-align: center;
+}
+
+.modalInfo {
+  display: inline;
+}
+
+.bodyModal {
+  color: $color-main-white;
+  @include SoinSansNeue-36-SuperBold;
+
+  @media (max-width: 1024px) {
+    @include SoinSansNeue-24-bold;
+  }
+}
+
+.modalLogo {
+  padding-bottom: 30px;
+}
+
+.modalFooter {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.modalButton {
+  background-color: $color-success !important;
+  border: none !important;
+
+  &:hover {
+    background-color: $color-success-hovered !important;
+  }
+
+  &:active {
+    background-color: $color-success-pressed !important;
+  }
+}

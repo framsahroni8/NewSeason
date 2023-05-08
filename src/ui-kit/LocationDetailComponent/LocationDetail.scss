@@ -1,0 +1,44 @@
+@import 'ui-kit/styles';
+
+.locationWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+.locationContainer{
+    max-width: 350px;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    gap: 15px;
+
+}
+
+.locationIcon{
+    svg path{
+        fill: $color-red;
+    }
+}
+
+.locationText{
+    word-break: break-all;
+    color: $color-text;
+    // word-wrap: break-word;
+    &-title{
+        @include SoinSansNeue-24-bold;
+    }
+
+    &-body{
+        @include SoinSansNeue-14-small;
+        color: $color-disabled;
+    }
+
+    @media(max-width: 767px){
+        &-title{
+            @include SoinSansNeue-20-bold;
+        }
+        &-body{
+            @include SoinSansNeue-16-bold;
+        }
+    }
+}

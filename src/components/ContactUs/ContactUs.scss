@@ -1,0 +1,39 @@
+@import 'ui-kit/styles';
+
+
+.contact{
+   padding: 10px;
+}
+
+.contactContainer{
+    // text-align: center
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+
+    @media(max-width: 1024px){
+        padding: 100px 25px 100px 25px;
+    }
+}
+
+
+.contactText{
+    // padding-left: 105px;
+    @include SoinSansNeue-48-bold;
+    color: black;
+    
+    @media(max-width:1024px){
+        @include SoinSansNeue-36-bold;
+    }
+
+    @media(max-width: 767px){
+        @include SoinSansNeue-30-bold;
+    }
+}
+
+.modalIcon{
+    display: flex;
+    svg path{
+        fill: $color-main-white;
+    }
+}

@@ -10,6 +10,7 @@ import { ReactComponent as Edit } from '../assets/icons/Edit.svg'
 import { ReactComponent as Exit } from '../assets/icons/Exit.svg'
 import { ReactComponent as Facebook} from '../assets/icons/Facebook.svg'
 import { ReactComponent as Home } from '../assets/icons/Home.svg'
+import { ReactComponent as Location} from '../assets/icons/Location.svg'
 import { ReactComponent as Message} from '../assets/icons/Message.svg'
 import { ReactComponent as Minus } from '../assets/icons/Minus.svg'
 import { ReactComponent as Pdf } from '../assets/icons/files/Pdf.svg'
@@ -34,6 +35,7 @@ export type IconType =
   | 'Exit'
   | 'Facebook'
   | 'Home'
+  | 'Location'
   | 'Message'
   | 'Minus'
   | 'Pdf'
@@ -58,6 +60,7 @@ export const iconTypes = new Map([
   ['Exit', <Exit key={newGuid()} />],
   ['Facebook', <Facebook key={newGuid()} />],
   ['Home', <Home key={newGuid()} />],
+  ['Location', <Location key={newGuid()} />],
   ['Message', <Message key={newGuid()} />],
   ['Minus', <Minus key={newGuid()} />],
   ['Pdf', <Pdf key={newGuid()} />],

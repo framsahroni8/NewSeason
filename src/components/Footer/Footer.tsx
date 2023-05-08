@@ -24,8 +24,8 @@ const Footer = () => {
 
   return (
     <div className='footerContainer'>
-      <div className='footerWrapper'>
-        <div className='footerText flex-end'>
+      <div className='footerWrapper w-full'>
+        <div className='footerText'>
           <span>&copy; PT Bogadong Anugerah Indonesia, 2022</span>
         </div>
         <div className='footerDetail'>
