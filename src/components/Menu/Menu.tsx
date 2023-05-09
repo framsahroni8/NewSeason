@@ -7,6 +7,8 @@ import CumiHitam from '../../assets/images/Menu/cumi_hitam_ricebox-scaled.jpg'
 import LaukFrozen from '../../assets/images/Menu/Manadong-Lauk-Frozen-Ayam-Cakalang-Rabe-Rica-Tinoransak-Woku-e1638772096227.jpg'
 import PerkedelJagung from '../../assets/images/Menu/Perkedel-Jagung-Manadong-Indonesia-e1638772185550.jpg'
 import { TextDivider } from 'ui-kit/TextDivider'
+import './Menu.scss'
+import { Button } from 'ui-kit'
 
 const Menu = () => {
   const menuData: menuImage[] = [
@@ -47,12 +49,15 @@ const Menu = () => {
     },
   ]
   return (
-    <div className='p-2'>
+    <div className='menuWrapper'>
       <div>
         <TextDivider>Menu</TextDivider>
       </div>
       <div>
         <MenuDetail options={menuData} />
+      </div>
+      <div className='flex justify-end'>
+        <Button>Order Now</Button>
       </div>
     </div>
   )

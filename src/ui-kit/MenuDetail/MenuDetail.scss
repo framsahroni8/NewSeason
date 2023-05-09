@@ -23,3 +23,11 @@
 .detailImage{
     width: 100%;
 }
+
+
+.menuContainer{
+    cursor: pointer;
+    &:hover{
+      box-shadow: $shadow-black;
+    }
+  }
