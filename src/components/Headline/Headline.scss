@@ -18,6 +18,8 @@
 }
 
 .headlineText{
+    height: 150px;
+    margin-top: auto;
     color: $color-primary;
     &-header{
         @include SoinSansNeue-48-bold;
@@ -46,6 +48,7 @@
     }
 
     .headlineText{
+        height: auto;
         &-header{
             @include SoinSansNeue-38-bold;
         }
@@ -58,6 +61,7 @@
 
 @media(max-width: 767px){
     .headlineText{
+        height: auto;
         &-header{
             @include SoinSansNeue-42-bold;
         }

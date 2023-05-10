@@ -37,7 +37,7 @@ const Locations = () => {
         {
             id: 7,
             title: 'Cipete',
-            detail: 'Jl. Cipete Raya No.74c, RW.3, Cipete akarta Selatan 12410'
+            detail: 'Jl. Cipete Raya No.74c, RW.3, Cipete Jakarta Selatan 12410'
         },
         {
             id: 8,

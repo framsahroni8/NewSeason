@@ -2,7 +2,16 @@
 
 
 .contact{
-   padding: 10px;
+padding-left: 155px;
+padding-right: 155px;
+padding-top: 64px;
+padding-bottom: 64px;
+
+@media(max-width: 767px){
+    padding-left: 0;
+    padding-right: 0;
+    
+}
 }
 
 .contactContainer{
@@ -11,8 +20,8 @@
     flex-direction: column;
     // justify-content: center;
 
-    @media(max-width: 1024px){
-        padding: 100px 25px 100px 25px;
+    @media(max-width: 767px){
+        padding: 0;
     }
 }
 

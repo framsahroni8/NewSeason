@@ -1,15 +1,16 @@
 @import 'ui-kit/styles';
 
 .locationsWrapper{
-    padding: 48px;
+    padding-left: 65px;
+    padding-right: 65px;
     @media(max-width: 767px) {
         padding: 0px;
     }
 }
 
 .locationsContainer{
-    padding-left: 64px;
-    padding-right: 64px;
+    padding-left: 84px;
+    padding-right: 84px;
     @media(max-width: 767px){
         padding: 0px;
     }

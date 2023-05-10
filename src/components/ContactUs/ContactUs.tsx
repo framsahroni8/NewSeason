@@ -17,7 +17,7 @@ const ContactUs = () => {
   return (
     <>
       <div className='contact'>
-        <div className='contactContainer py-16'>
+        <div className='contactContainer'>
           <div className=''>
             <div className='contactText'>
               <TextDivider>Contact us!</TextDivider>
