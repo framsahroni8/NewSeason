@@ -15,7 +15,7 @@ const Contact = () => {
   ]
 
   return (
-    <div className='contactBox'>
+    <div className='contactBox h-screen'>
       <ContactUs/>
     </div>
   )

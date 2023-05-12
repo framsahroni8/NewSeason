@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Headline = () => {
   const handleScroll = () => {
-    const targetElement = document.getElementById('scrollTarget')
+    const targetElement = document.getElementById('menu')
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' })
     }
@@ -16,9 +16,6 @@ const Headline = () => {
         <div className='headlineImage'>
           <div>
             <img src={Banner} alt='banner-scaled' />
-            <Button className='btn-scroll' onClick={handleScroll}>
-              Scroll Down
-            </Button>
           </div>
         </div>
         <div className='headlineWidget'>
@@ -30,6 +27,9 @@ const Headline = () => {
               <span>#NikmatnyaGaPakeRibet</span>
             </div>
           </div>
+          <Button className='btn-scroll' onClick={handleScroll}>
+              Scroll Down
+            </Button>
         </div>
       </div>
     </>

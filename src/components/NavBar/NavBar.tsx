@@ -1,18 +1,21 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './NavBar.scss'
 import { Button } from 'ui-kit'
 import Logo from '../../assets/logo/logo-navbar.png'
 import { useState } from 'react'
+import { Link as ScrollLink } from 'react-scroll'
 
 const navigationData = [
-  { name: 'Menu', href: '/menu', current: false },
+  { name: 'Menu', href: '/#menu', current: false },
   { name: 'Locations', href: '/locations', current: false },
-  { name: 'Contact', href: '/locations', current: false },
+  { name: 'Contact', href: '/contact', current: false },
 ]
 
 const Navbar = () => {
+  const location = useLocation()
   const navigate = useNavigate()
-  const [activePage, setActivePage] = useState('home')
+  const [activePage, setActivePage] = useState('')
+  const [isScrollingDown, setIsScrollingDown] = useState(false)
 
   const handleOrder = () => {
     navigate('/order')
@@ -23,14 +26,21 @@ const Navbar = () => {
   }
 
   const handleNavbarMenu = (name: string) => {
-    console.log('kepanggil' + name)
-    setActivePage(name)
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      setIsScrollingDown(scrollPosition > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }
 
   return (
     <>
-      <div className='bg-primary text-base-100-content'>
-        <div className='navbar container mx-auto'>
+      <div className='bg-primary text-base-100-content h-[60px] pb-5 px-4'>
+        <div className='navbar mx-auto navContainer'>
           <div className='navbar-start navbar-responsive w-full'>
             <div className='dropdown'>
               <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -51,7 +61,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52 pr-[200px]'
+                className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52 pr-[200px] hidden max-lg:flex'
               >
                 {navigationData.map((item) => (
                   <li key={item.name}>
@@ -60,22 +70,36 @@ const Navbar = () => {
                 ))}
               </ul>
             </div>
-            <img
-              src={Logo}
-              className=' navbar-logo'
-              onClick={handleLogo}
-            />
+            <div className='navbar-logo max-lg:justify-center'>
+              <img src={Logo} className='w-[80px]' onClick={handleLogo} />
+            </div>
           </div>
-          <div>
+
+          <div className='navHidden'>
             <ul className='menu menu-horizontal px-1 hidden lg:flex'>
               {navigationData.map((item) => (
-                <li
-                  className={activePage === item.name ? 'navbar-menu active' : 'navbar-menu'}
-                  key={item.name}
-                >
-                  <Link onClick={() => handleNavbarMenu(item.name)} to={item.href}>
-                    {item.name}
-                  </Link>
+                <li key={item.name}>
+                  {item.href === 'menu' ? (
+                    <ScrollLink
+                      to={item.href}
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                      activeClass='active'
+                      onClick={() => handleNavbarMenu(item.name)}
+                      className={activePage === item.name ? 'navActive' : ''}
+                    >
+                      {item.name}
+                    </ScrollLink>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      onClick={() => handleNavbarMenu(item.name)}
+                      className={location.pathname === item.href ? 'navActive' : ''}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -90,3 +114,6 @@ const Navbar = () => {
 }
 
 export default Navbar
+function setIsScrollingDown(arg0: boolean) {
+  throw new Error('Function not implemented.')
+}

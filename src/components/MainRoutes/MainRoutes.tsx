@@ -12,7 +12,6 @@ const MainRoutes = () => (
     <Route path='/' element={<PublicRoutes />}>
       <Route path='/' element={<Navigate to='home'replace/>} />
       <Route path='home' element={<Home />} />
-      <Route path='/menu/:id' element={<Menu />} />
       <Route path='Contact' element={<Contact />} />
       <Route path='locations' element={<LocationPage />} />
     </Route>

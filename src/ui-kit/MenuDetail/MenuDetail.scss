@@ -10,13 +10,13 @@
 .detailWrapper{
     display: flex;
     gap: 10px;
-    width: 300px;
+    width: 260px;
     flex-direction: column;
     padding: 10px;
     border-radius: 8px;
 
     @media(max-width:767px){
-        width: 190px;
+        width: 170px;
     }
 }
 

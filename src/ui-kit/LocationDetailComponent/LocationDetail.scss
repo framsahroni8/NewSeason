@@ -4,14 +4,14 @@
     display: flex;
     flex-wrap: wrap;
     @media (min-width:1024px){
-        gap: 70px;
+        gap: 34px;
     }
     @media(max-width:1024px){
         gap: 0px;
     }
 }
 .locationContainer{
-    max-width: 320px;
+    max-width: 350px;
     display: flex;
     align-items: center;
     padding-top: 35px;
@@ -32,26 +32,39 @@
     padding-top: 35px;
     border-bottom: 4px solid $color-primary;
 
-    @media(max-width: 1024px){
-        width: 100%;
-        max-width: max-content;
+    @media(max-width: 767px){
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
-.locationIcon{
+.icon{
     svg path{
         fill: $color-red;
+    }
+    width: 24px;
+    height: 24px;
+
+    @media(max-width:767px){
+        width: 24px;
+        height: 24px;
     }
 }
 
 .locationMap{
     display: flex;
-    // ali: flex-end;
+    padding-bottom: 20px;
+    @media(max-width: 767px){
+       width: 100%;
+       margin-top: 10px;
+       order: 2;
+    }
 }
 
 .locationText{
     word-break: normal;
     color: $color-text;
+
     // word-wrap: break-word;
     &-title{
         @include SoinSansNeue-24-bold;
@@ -67,6 +80,7 @@
             @include SoinSansNeue-20-bold;
         }
         &-body{
+            max-width: 500px;
             @include SoinSansNeue-16-bold;
         }
     }

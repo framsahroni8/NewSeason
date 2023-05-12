@@ -10,21 +10,20 @@
 }
 
 .btn-scroll {
-  top: 92%;
+  position: absolute;
+  top: calc(100% - 60px); /* Ubah nilai 60px sesuai dengan tinggi tombol */
   left: 45%;
   transform: translate(-50%, -50%);
-  position: absolute;
 
   @media (max-width: 1024px) {
-    top: 80%;
+    top: calc(100% - 60px); /* Ubah nilai 60px sesuai dengan tinggi tombol */
     left: 60%;
   }
   @media (max-width: 767px) {
-    visibility: hidden;
+    display: none;
   }
-  // display: flex;
-  // align-items: center;
 }
+
 
 .headlineWidget {
   display: flex;

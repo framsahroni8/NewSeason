@@ -23,18 +23,17 @@ export const ModalContact: React.FC<modalData> = ({ options }) => {
             <div className='modal-box-hard'>
               <div className='modalContainer'>
                 <div className='modalInfo'>
-                  <div className='modalLogo'>
+                  <div className='modalLogo'> 
                     <Icon type={option.logo} size={option.size} />
                   </div>
                   <div>
                     <span className='bodyModal'>{option.detail}</span>
                   </div>
-                </div>
-                <div className='modalFooter'>
                   <a href={option.link}>
                     <Button className='modalButton'>{option.buttonText}</Button>
                   </a>
                 </div>
+                
               </div>
             </div>
           </div>

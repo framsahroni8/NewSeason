@@ -4,20 +4,14 @@ import { ContactUs } from 'components/ContactUs'
 import { Menu } from 'components/Menu'
 import { Locations } from 'components/Locations'
 import { Reviews } from 'components/Reviews'
-import { Link } from 'react-router-dom'
-import { Button } from 'ui-kit'
 import { useState, useEffect } from 'react'
+import { Link as ScrollLink } from 'react-scroll'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
   const [fadeIn, setFadeIn] = useState(false)
   const [isScrollingDown, setIsScrollingDown] = useState(false)
-
-  const handleScroll = () => {
-    const targetElement = document.getElementById('scrollTarget')
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,9 +26,10 @@ const Home = () => {
   }, [])
 
   useEffect(() => {
+    AOS.init();
     const handleScrollAnimation = () => {
       const scrollPosition = window.scrollY
-      const targetElement = document.getElementById('scrollTarget')
+      const targetElement = document.getElementById('menu')
 
       if (targetElement) {
         const targetPosition = targetElement.offsetTop
@@ -58,19 +53,19 @@ const Home = () => {
   }, [])
   return (
     <>
-      <div className='fade-in'>
+      <div id='headline' className=''>
         <Headline />
       </div>
-      <div id='scrollTarget' className={`fixed${isScrollingDown ? 'fade-in' : 'fade-out'}`}>
+      <div id='menu' className='componentPosition' >
         <Menu />
       </div>
-      <div className={`pb-16${isScrollingDown ? 'fade-in' : 'fade-out'}`}>
+      <div className='componentPosition'  >
         <Locations />
       </div>
-      <div className={`${isScrollingDown ? 'fade-in' : 'fade-out'}`}>
+      <div >
         <Reviews />
       </div>
-      <div className={`${isScrollingDown ? 'fade-in' : 'fade-out'}`}>
+      <div className='componentPosition'  >
         <ContactUs />
       </div>
     </>

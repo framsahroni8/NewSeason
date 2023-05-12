@@ -14,7 +14,7 @@ export const MenuDetail: React.FC<menuProps> = ({ options }) => {
   return (
     <div>
       <div className='flex flex-row items-center mt-[40px] gap-[24px] justify-center'>
-        <div className='w-full flex flex-wrap'>
+        <div className='w-full flex flex-wrap gap-[25px]'>
         {options.map((option) => (
           <div className='detailWrapper  menuContainer' key={option.id}>
             <div className='detailImage'>

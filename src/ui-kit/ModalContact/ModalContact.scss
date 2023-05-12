@@ -13,12 +13,14 @@
 }
 
 .modalContainer {
-  padding: 15px;
+  padding: 40px;
   text-align: center;
 }
 
 .modalInfo {
-  display: inline;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .bodyModal {
@@ -31,7 +33,7 @@
 }
 
 .modalLogo {
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 }
 
 .modalFooter {
