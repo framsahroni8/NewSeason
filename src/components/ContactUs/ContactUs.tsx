@@ -7,7 +7,7 @@ const ContactUs = () => {
   const modalData: modalProps[] = [
     {
       logo: 'WhatsApp',
-      link: '/',
+      link: 'https://wa.link/lqkgvh',
       size: 'large',
       detail: '+62-811-1009-115',
       buttonText: 'Send Message',

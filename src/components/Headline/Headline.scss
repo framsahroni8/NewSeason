@@ -1,69 +1,86 @@
 @import 'ui-kit/styles';
 
-.headlineContainer{
-    display: flex;
-    // height: 100vh;
+.headlineContainer {
+  display: flex;
+  // height: 100vh;
 }
 
-.headlineImage{
-    width:70%;
+.headlineImage {
+  width: 70%;
 }
 
-.headlineWidget{
+.btn-scroll {
+  top: 92%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+
+  @media (max-width: 1024px) {
+    top: 80%;
+    left: 60%;
+  }
+  @media (max-width: 767px) {
+    visibility: hidden;
+  }
+  // display: flex;
+  // align-items: center;
+}
+
+.headlineWidget {
+  display: flex;
+  width: 30%;
+  background-color: $color-headline;
+  align-content: flex-end;
+  align-items: flex-end;
+}
+
+.headlineText {
+  height: 150px;
+  margin-top: auto;
+  color: $color-primary;
+  &-header {
+    @include SoinSansNeue-48-bold;
+  }
+
+  &-body {
+    @include SoinSansNeue-24-bold;
+  }
+}
+
+@media (max-width: 1024px) {
+  .headlineContainer {
+    display: inline-block;
+  }
+
+  .headlineImage {
+    width: 100%;
+  }
+
+  .headlineWidget {
     display: flex;
-    width: 30%;
+    width: 100%;
     background-color: $color-headline;
     align-content: flex-end;
     align-items: flex-end;
+  }
+
+  .headlineText {
+    height: auto;
+    &-header {
+      @include SoinSansNeue-38-bold;
+    }
+
+    &-body {
+      @include SoinSansNeue-16-bold;
+    }
+  }
 }
 
-.headlineText{
-    height: 150px;
-    margin-top: auto;
-    color: $color-primary;
-    &-header{
-        @include SoinSansNeue-48-bold;
+@media (max-width: 767px) {
+  .headlineText {
+    height: auto;
+    &-header {
+      @include SoinSansNeue-42-bold;
     }
-
-    &-body{
-        @include SoinSansNeue-24-bold;
-    }
-}
-
-@media(max-width:1024px){
-    .headlineContainer{
-        display: inline-block;
-    }
-    
-    .headlineImage{
-        width:100%;
-    }
-    
-    .headlineWidget{
-        display: flex;
-        width: 100%;
-        background-color: $color-headline;
-        align-content: flex-end;
-        align-items: flex-end;
-    }
-
-    .headlineText{
-        height: auto;
-        &-header{
-            @include SoinSansNeue-38-bold;
-        }
-    
-        &-body{
-            @include SoinSansNeue-16-bold;
-        }
-    }
-}
-
-@media(max-width: 767px){
-    .headlineText{
-        height: auto;
-        &-header{
-            @include SoinSansNeue-42-bold;
-        }
-    }
+  }
 }

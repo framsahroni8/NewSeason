@@ -18,7 +18,7 @@ const Footer = () => {
     },
     {
       iconTypes: 'WhatsApp',
-      href: '#',
+      href: '"https://wa.link/lqkgvh',
     },
   ]
 

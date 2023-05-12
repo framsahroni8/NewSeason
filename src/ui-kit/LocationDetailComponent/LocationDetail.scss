@@ -3,15 +3,39 @@
 .locationWrapper{
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    @media (min-width:1024px){
+        gap: 70px;
+    }
+    @media(max-width:1024px){
+        gap: 0px;
+    }
 }
 .locationContainer{
-    max-width: 350px;
+    max-width: 320px;
     display: flex;
-    flex-direction: row;
-    padding: 15px;
+    align-items: center;
+    padding-top: 35px;
     gap: 15px;
 
+    @media(max-width: 1024px){
+        width: 100%;
+        max-width: max-content;
+    }
+
+}
+
+.locationContainerIsMap{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 35px;
+    border-bottom: 4px solid $color-primary;
+
+    @media(max-width: 1024px){
+        width: 100%;
+        max-width: max-content;
+    }
 }
 
 .locationIcon{
@@ -20,8 +44,13 @@
     }
 }
 
+.locationMap{
+    display: flex;
+    // ali: flex-end;
+}
+
 .locationText{
-    word-break: break-all;
+    word-break: normal;
     color: $color-text;
     // word-wrap: break-word;
     &-title{

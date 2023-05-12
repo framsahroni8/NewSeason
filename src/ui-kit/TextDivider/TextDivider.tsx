@@ -1,17 +1,14 @@
 import './TextDivider.scss'
 
-
-export interface iDividerProps{
-    children:React.ReactNode
+export interface iDividerProps {
+  children: React.ReactNode
 }
 
-export const TextDivider:React.FC<iDividerProps> = ({children,}) => {
+export const TextDivider: React.FC<iDividerProps> = ({ children }) => {
   return (
-    <div className='contactText'>
-      <div className='contactDivider'>
-        <span>{children}</span>
-        <div className='dividerLine'></div>
-      </div>
+    <div className='contactDivider'>
+      <span>{children}</span>
+      <div className='dividerLine'></div>
     </div>
   )
 }

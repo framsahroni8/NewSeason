@@ -49,9 +49,9 @@ const Menu = () => {
     },
   ]
   return (
-    <div className='menuWrapper'>
-      <div>
-        <TextDivider>Menu</TextDivider>
+    <div className='menuWrapper' id='menu'>
+      <div className='menuText'>
+        <TextDivider>Our Menu</TextDivider>
       </div>
       <div>
         <MenuDetail options={menuData} />

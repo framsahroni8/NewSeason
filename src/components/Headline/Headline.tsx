@@ -1,19 +1,28 @@
 import { Button } from 'ui-kit'
 import Banner from '../../assets/images/banner-scaled.jpg'
 import './Headline.scss'
+import { Link } from 'react-router-dom'
 
 const Headline = () => {
+  const handleScroll = () => {
+    const targetElement = document.getElementById('scrollTarget')
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   return (
     <>
       <div className='headlineContainer'>
         <div className='headlineImage'>
-          <img src={Banner} alt='banner-scaled' />
           <div>
-        <Button className='absolute'>Scroll Down</Button>
-        </div>
+            <img src={Banner} alt='banner-scaled' />
+            <Button className='btn-scroll' onClick={handleScroll}>
+              Scroll Down
+            </Button>
+          </div>
         </div>
         <div className='headlineWidget'>
-          <div className='headlineText px-4'>
+          <div className='headlineText px-2'>
             <div className='headlineText-header'>
               <span>Manadong</span>
             </div>
