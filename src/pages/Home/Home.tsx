@@ -56,7 +56,7 @@ const Home = () => {
       <div id='headline' className=''>
         <Headline />
       </div>
-      <div id='menu' className='componentPosition' >
+      <div id='menu' className='componentPosition' data-aos='fade-up'>
         <Menu />
       </div>
       <div className='componentPosition'  >

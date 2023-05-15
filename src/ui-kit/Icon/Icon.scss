@@ -12,9 +12,13 @@
   }
 
   &-IconSize {
-    &__small {
+    &__smaller {
       width: 12px;
       height: 12px;
+    }
+    &__small {
+      width: 18px;
+      height: 18px;
     }
     &__regular {
       width: 25px;

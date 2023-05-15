@@ -1,3 +1,3 @@
-import ModalContact from './ModalContact';
+export {ModalContact as default} from './ModalContact'
 
-export {ModalContact}
+export * from './ModalContact'

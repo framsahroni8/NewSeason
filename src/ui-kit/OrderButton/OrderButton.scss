@@ -1,0 +1,50 @@
+@import "ui-kit/styles";
+
+
+.btnOrder{
+    $this: &;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    svg path{
+        fill: $color-main-white ;
+    }
+
+    &#{$this}__primary{
+        background-color: $color-primary !important;
+
+        &:hover{
+            background-color: $color-primary-hover !important;
+        }
+
+        &:active{
+            background-color: $color-primary-pressed !important;
+        }
+    }
+
+    &#{$this}__secondary{
+        background-color: $color-orange !important;
+
+        &:hover{
+            background-color: $color-primary-hover !important;
+        }
+
+        &:active{
+            background-color: $color-primary-pressed !important;
+        }
+    }
+    &#{$this}__success{
+        border: none !important;
+        background-color: $color-success-darken !important;
+
+        &:hover{
+            background-color: $color-success-hovered !important;
+        }
+
+        &:active{
+            background-color: $color-success-pressed !important;
+        }
+    }
+
+}

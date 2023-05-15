@@ -50,11 +50,13 @@ const Menu = () => {
   ]
   return (
     <div className='menuWrapper' id='menu'>
-      <div className='menuText'>
-        <TextDivider>Our Menu</TextDivider>
-      </div>
       <div>
-        <MenuDetail options={menuData} />
+        <div className='menuText'>
+          <TextDivider>Our Menu</TextDivider>
+        </div>
+        <div>
+          <MenuDetail options={menuData} />
+        </div>
       </div>
       <div className='flex justify-end'>
         <Button>Order Now</Button>

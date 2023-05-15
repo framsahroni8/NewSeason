@@ -2,12 +2,15 @@ import React, { ButtonHTMLAttributes, DetailedHTMLProps, memo } from 'react'
 import classNames from 'classnames'
 import { Icon, IconType } from '..'
 import './Button.scss'
+import { IconSizeType } from 'ui-kit/Icon'
 
 export interface IButtonProps
   extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   className?: string
   typeIcon?: IconType
+  sizeIcon?: IconSizeType
   isDisabled?: boolean
+  iconRight?: boolean
   onClick?: (event: React.MouseEvent) => void
 }
 
@@ -15,6 +18,8 @@ const ButtonComponent: React.FC<IButtonProps> = ({
   className,
   children,
   typeIcon,
+  sizeIcon = 'medium',
+  iconRight,
   isDisabled = false,
   onClick,
   ...rest
@@ -29,8 +34,17 @@ const ButtonComponent: React.FC<IButtonProps> = ({
       onClick={onClick}
       {...rest}
     >
-      {typeIcon && <Icon type={typeIcon} data-testid='test-button-icon' />}
-      <span className={typeIcon ? 'Button-Text' : ''}>{children}</span>
+      {iconRight ? (
+        <>
+          <span className={typeIcon ? 'Button-Text' : ''}>{children}</span>
+          {typeIcon && <Icon type={typeIcon} size={sizeIcon} data-testid='test-button-icon' />}
+        </>
+      ) : (
+        <>
+          <span className={typeIcon ? 'Button-Text' : ''}>{children}</span>
+          {typeIcon && <Icon type={typeIcon} size={sizeIcon} data-testid='test-button-icon' />}
+        </>
+      )}
     </button>
   )
 }

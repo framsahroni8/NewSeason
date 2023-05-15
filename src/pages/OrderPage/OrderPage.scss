@@ -1,0 +1,6 @@
+@import "ui-kit/styles";
+
+.orderText{
+    @include SoinSansNeue-30-bold;
+    color: $color-text;
+}

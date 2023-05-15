@@ -1,4 +1,4 @@
-import { Button } from 'ui-kit'
+import { Button, Icon } from 'ui-kit'
 import Banner from '../../assets/images/banner-scaled.jpg'
 import './Headline.scss'
 import { Link } from 'react-router-dom'
@@ -16,6 +16,12 @@ const Headline = () => {
         <div className='headlineImage'>
           <div>
             <img src={Banner} alt='banner-scaled' />
+            <div className='absolute'>
+              <div className='iconContainer'>
+                <span>Scroll Dong!</span>
+                <Icon type='Down' size='large' onClick={handleScroll} />
+              </div>
+            </div>
           </div>
         </div>
         <div className='headlineWidget'>
@@ -27,9 +33,6 @@ const Headline = () => {
               <span>#NikmatnyaGaPakeRibet</span>
             </div>
           </div>
-          <Button className='btn-scroll' onClick={handleScroll}>
-              Scroll Down
-            </Button>
         </div>
       </div>
     </>

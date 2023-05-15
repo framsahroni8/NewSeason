@@ -42,5 +42,3 @@ export const ModalContact: React.FC<modalData> = ({ options }) => {
     </>
   )
 }
-
-export default ModalContact

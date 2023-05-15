@@ -1,0 +1,36 @@
+@import "ui-kit/styles";
+
+.outletWrapper{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.outletContainer{
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.OutletLocation{
+    @include SoinSansNeue-20-bold;
+    color: black;
+}
+
+.outletBody{
+    display: flex;
+    justify-content: center;
+    @include SoinSansNeue-15-bold;
+    color: $color-primary;
+
+    svg path{
+        fill: $color-primary !important;
+    }
+
+    &:hover{
+        color: $color-primary-hover !important;
+    }
+}
