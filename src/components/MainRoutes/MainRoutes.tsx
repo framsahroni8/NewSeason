@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 
-import { Contact, Home, LocationPage, MenuPage, NotFound, OrderPage } from 'pages'
+import { Contact, GoFoodPage, GrabFood, Home, LocationPage, MenuPage, NotFound, OrderPage, ShopeeFood } from 'pages'
 import { Menu, PublicRoutes } from 'components'
 import { ContactUs } from 'components/ContactUs'
-import { GoFoodPage } from 'pages/OutletPage'
+
 
 
 const MainRoutes = () => (
@@ -16,7 +16,9 @@ const MainRoutes = () => (
       <Route path='Contact' element={<Contact />} />
       <Route path='locations' element={<LocationPage />} />
       <Route path='order' element={<OrderPage />} />
-      <Route path='GoFood' element={<GoFoodPage /> } />
+      <Route path='GoFood' element={<GoFoodPage/> } />
+      <Route path='GrabFood' element={<GrabFood/>} />
+      <Route path='ShopeeFood' element={<ShopeeFood />} />
     </Route>
     {/** Permission denied route */}
     <Route path='/denied' element={<NotFound />} />

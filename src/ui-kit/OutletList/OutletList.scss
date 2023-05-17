@@ -16,14 +16,19 @@
 }
 
 .OutletLocation{
-    @include SoinSansNeue-20-bold;
+    @include SoinSansNeue-18-bold;
+    max-width: fit-content;
     color: black;
+
+    @media (max-width: 1024px){
+        @include SoinSansNeue-16-bold
+    }
 }
 
 .outletBody{
     display: flex;
     justify-content: center;
-    @include SoinSansNeue-15-bold;
+    @include SoinSansNeue-14-bold;
     color: $color-primary;
 
     svg path{
@@ -32,5 +37,9 @@
 
     &:hover{
         color: $color-primary-hover !important;
+    }
+
+    @media (max-width: 1024px) {
+        @include SoinSansNeue-12-regular;
     }
 }

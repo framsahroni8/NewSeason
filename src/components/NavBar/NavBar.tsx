@@ -6,16 +6,15 @@ import { useState } from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 
 const navigationData = [
+  { name: 'Eatry', href: '#', current: false},
   { name: 'Menu', href: '/#menu', current: false },
   { name: 'Locations', href: '/locations', current: false },
   { name: 'Contact', href: '/contact', current: false },
 ]
 
 const Navbar = () => {
-  const location = useLocation()
   const navigate = useNavigate()
-  const [activePage, setActivePage] = useState('')
-  const [isScrollingDown, setIsScrollingDown] = useState(false)
+  const [activePage, setActivePage] = useState('home')
 
   const handleOrder = () => {
     navigate('/order')
@@ -26,16 +25,10 @@ const Navbar = () => {
   }
 
   const handleNavbarMenu = (name: string) => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      setIsScrollingDown(scrollPosition > 0)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
+    console.log('kepanggil' + name)
+    setActivePage(name)
   }
+
 
   return (
     <>
@@ -76,30 +69,15 @@ const Navbar = () => {
           </div>
 
           <div className='navHidden'>
-            <ul className='menu menu-horizontal px-1 hidden lg:flex'>
+          <ul className='menu menu-horizontal px-1 hidden lg:flex'>
               {navigationData.map((item) => (
-                <li key={item.name}>
-                  {item.href === 'menu' ? (
-                    <ScrollLink
-                      to={item.href}
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                      activeClass='active'
-                      onClick={() => handleNavbarMenu(item.name)}
-                      className={activePage === item.name ? 'navActive' : ''}
-                    >
-                      {item.name}
-                    </ScrollLink>
-                  ) : (
-                    <Link
-                      to={item.href}
-                      onClick={() => handleNavbarMenu(item.name)}
-                      className={location.pathname === item.href ? 'navActive' : ''}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
+                <li
+                  className={activePage === item.name ? 'navActive' : ''}
+                  key={item.name}
+                >
+                  <Link onClick={() => handleNavbarMenu(item.name)} to={item.href}>
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -114,6 +92,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-function setIsScrollingDown(arg0: boolean) {
-  throw new Error('Function not implemented.')
-}

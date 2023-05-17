@@ -20,7 +20,7 @@ const OrderPage = () => {
             Icon: 'GoFood' ,
             size: 'medium',
             text: 'GrabFood',
-            link: '/GoFood'
+            link: '/GrabFood'
         },
         {
             id: 3,
@@ -28,7 +28,7 @@ const OrderPage = () => {
             Icon: 'GoFood' ,
             size: 'medium',
             text: 'ShopeeFood',
-            link: '/GoFood'
+            link: '/ShopeeFood'
         }
     ]
 

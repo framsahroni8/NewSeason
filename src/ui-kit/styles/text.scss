@@ -72,6 +72,15 @@ $base-font-family: "Soin Sans Neue", sans-serif;
   line-height: 1.25;
 }
 
+/* SoinSansNeue/18/Bold */
+@mixin SoinSansNeue-18-bold {
+  font-family: $base-font-family;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
 /* SoinSansNeue/20/Bold */
 @mixin SoinSansNeue-20-bold {
   font-family: $base-font-family;

@@ -1,3 +1,3 @@
-import GoFoodPage from './OutletPage';
+import Outlet from './OutletPage';
 
-export {GoFoodPage}
+export {Outlet}
