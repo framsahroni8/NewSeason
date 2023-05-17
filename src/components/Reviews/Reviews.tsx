@@ -57,7 +57,7 @@ const Reviews = () => {
   ]
 
   return (
-    <div className='reviewsWrapper'>
+    <div className='reviewsWrapper '>
       <div className=''>
         <div className='reviewsText'>
           <TextDivider>Reviews</TextDivider>

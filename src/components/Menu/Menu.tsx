@@ -50,7 +50,7 @@ const Menu = () => {
   ]
   return (
     <div className='menuWrapper' id='menu'>
-      <div>
+      <div className=''>
         <div className='menuText'>
           <TextDivider>Our Menu</TextDivider>
         </div>
@@ -58,7 +58,7 @@ const Menu = () => {
           <MenuDetail options={menuData} />
         </div>
       </div>
-      <div className='flex justify-end'>
+      <div className='flex '>
         <Button>Order Now</Button>
       </div>
     </div>

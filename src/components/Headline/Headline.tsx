@@ -17,10 +17,10 @@ const Headline = () => {
           <div>
             <img src={Banner} alt='banner-scaled' />
             <div className='absolute'>
-              <div className='iconContainer'>
+              {/* <div className='iconContainer'>
                 <span>Scroll Dong!</span>
                 <Icon type='Down' size='large' onClick={handleScroll} />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

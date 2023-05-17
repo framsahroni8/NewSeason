@@ -53,20 +53,20 @@ const Home = () => {
   }, [])
   return (
     <>
-      <div className=''>
+      <div className='w-[100%] flex flex-col items-center'>
         <div id='headline' className=''>
           <Headline />
         </div>
-        <div className='componentPosition' data-aos='fade-up'>
+        <div className='w-[80%] py-3' data-aos='fade-up'>
           <Menu />
         </div>
-        <div className='componentPosition' data-aos='fade-up'>
+        <div className='componentPosition w-[80%]  py-3' data-aos='fade-up'>
           <Locations />
         </div>
-        <div data-aos='fade-up'>
+        <div className='w-[100%]  py-3' data-aos='fade-up '>
           <Reviews />
         </div>
-        <div className='componentPosition' data-aos='fade-up'>
+        <div className='componentPosition  py-3' data-aos='zoom-out'>
           <ContactUs />
         </div>
       </div>
