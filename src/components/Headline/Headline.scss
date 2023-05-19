@@ -34,7 +34,7 @@
 }
 
 .headlineText {
-  height: 150px;
+  height: 180px;
   margin-top: auto;
   color: $color-primary;
   &-header {
@@ -84,27 +84,8 @@
   }
 }
 
-.iconContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* Menggeser ikon ke bagian bawah */
-  position: absolute;
-  width: 1080px;
-  height: 250px;
-  margin-top: 850px;
-  margin-left: 200px;
-  bottom: 0; /* Menempatkan ikon di bagian bawah */
-  cursor: pointer;
-  animation-name: floatAnimation;
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  svg path{
-    fill: $color-red !important;
-    stroke: none !important;
-  }
-}
+
+
 
 @keyframes floatAnimation {
   0% {

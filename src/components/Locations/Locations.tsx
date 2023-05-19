@@ -60,7 +60,7 @@ const Locations = () => {
     <div className='locationsWrapper'>
       <div className='locationsContainer'>
         <div>
-          <div className='locationsTitle'>
+          <div className='locationsTitle mb-5'>
             <TextDivider>Locations</TextDivider>
           </div>
         </div>

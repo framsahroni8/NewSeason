@@ -17,7 +17,7 @@ const OrderPage = () => {
         {
             id: 2,
             type: 'Secondary',
-            Icon: 'GoFood' ,
+            Icon: 'GrabFood' ,
             size: 'medium',
             text: 'GrabFood',
             link: '/GrabFood'
@@ -25,7 +25,7 @@ const OrderPage = () => {
         {
             id: 3,
             type: 'Success',
-            Icon: 'GoFood' ,
+            Icon: 'ShopeeFood' ,
             size: 'medium',
             text: 'ShopeeFood',
             link: '/ShopeeFood'
@@ -33,12 +33,12 @@ const OrderPage = () => {
     ]
 
     return (
-    <div className='p-24 flex gap-8 max-md:flex-col-reverse'>
-      <div className='w-[30%] max-md:w-[100%]'>
+    <div className='p-24 flex gap-8 max-lg:flex-col-reverse'>
+      <div className='w-[30%] max-lg:w-[100%]  h-screen'>
         <span className='orderText'>Pesan di:</span>
         <OrderButton options={ShopData} className={''} />
       </div>
-      <div className='p-6 w-[70%] max-md:w-[100%]'>
+      <div className='p-6 w-[55%] max-lg:w-[100%]'>
         <img src={ImageOrder} alt='Manadong-Ricebox-4' />
       </div>
     </div>

@@ -20,17 +20,17 @@ export interface ReviewProps {
 
 const swiperBreakPoints ={
   // when window width is >= 640px
-  320: {
+  100: {
     slidesPerView: 1,
     spaceBetween: 10,
   },
   // when window width is >= 768px
-  768: {
+  540: {
     slidesPerView: 2,
-    spaceBetween: 20,
+    spaceBetween: 90,
   },
   // when window width is >= 1024px
-  1024: {
+  768: {
     slidesPerView: 3,
     spacesBetween: 30
   },
@@ -39,8 +39,8 @@ const swiperBreakPoints ={
 export const SliderComponent: React.FC<ReviewProps> = ({ options }) => {
   return (
     <Swiper
-      spaceBetween={0}
-      slidesPerView={3}
+      spaceBetween={70}
+      slidesPerView={2}
       breakpoints={swiperBreakPoints}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}

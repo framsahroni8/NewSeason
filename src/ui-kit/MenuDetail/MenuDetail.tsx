@@ -1,9 +1,13 @@
+import { ModalViewMenu } from 'components/ModalViewMenu'
 import './MenuDetail.scss'
+import useModal from 'utils/getModal'
+import { Drawings } from 'interfaces/Drawings.interface'
+import { useState } from 'react'
+import { ImageInterface } from 'interfaces/Image.interface'
 
 export interface menuImage {
   id: number
-  image: string
-  name: string
+  data: ImageInterface
 }
 
 export interface menuProps {
@@ -11,6 +15,13 @@ export interface menuProps {
 }
 
 export const MenuDetail: React.FC<menuProps> = ({ options }) => {
+  const [visibleSee, toggleSee] = useModal()
+  const [selectedImage, setSelectedImage] = useState<menuImage | null>(null)
+
+  const handleImageClick = (image: menuImage) => {
+    setSelectedImage(image)
+    toggleSee()
+  }
   return (
     <div>
       <div className='flex flex-row items-center mt-[40px] gap-[24px] justify-center'>
@@ -18,15 +29,17 @@ export const MenuDetail: React.FC<menuProps> = ({ options }) => {
         {options.map((option) => (
           <div className='detailWrapper  menuContainer' key={option.id}>
             <div className='detailImage'>
-              <img src={option.image} />
+              <img src={option.data.src} onClick={() => handleImageClick(option)} />
             </div>
             <div className='text-black'>
-              <span>{option.name}</span>
+              <span>{option.data.name}</span>
             </div>
           </div>
         ))}
         </div>
-        
+        {selectedImage && (
+          <ModalViewMenu visible={visibleSee} toggle={toggleSee} image={selectedImage.data} />
+        )}
       </div>
     </div>
   )

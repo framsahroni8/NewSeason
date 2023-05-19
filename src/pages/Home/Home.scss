@@ -1,3 +1,5 @@
+@import 'ui-kit/styles';
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -24,16 +26,16 @@
   animation: fade-out 1s ease-in-out forwards;
 }
 
-.homeContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .componentPosition {
-    padding-top: 20px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,4 +43,60 @@
   @media (max-width: 1024px) {
     padding: 20px;
   }
+}
+
+.reviews {
+  background-color: $color-blue-darken;
+}
+
+.scrollIcon {
+  position: absolute;
+  bottom: 100px; /* Sesuaikan dengan posisi vertikal yang diinginkan */
+  left: 50%; /* Pusatkan secara horizontal */
+  transform: translateX(-50%);
+  z-index: 999; /* Atur z-index agar ikon tetap di atas elemen lain */
+  color: #000000; /* Atur warna ikon sesuai kebutuhan */
+}
+
+.scrollText {
+  width: 100px;
+  position: absolute;
+  bottom: 130px; /* Sesuaikan dengan posisi vertikal yang diinginkan */
+  left: 50%; /* Pusatkan secara horizontal */
+  transform: translateX(-50%);
+  z-index: 999; /* Atur z-index agar ikon tetap di atas elemen lain */
+  color: red; /* Atur warna ikon sesuai kebutuhan */
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  position: absolute;
+  cursor: pointer;
+  animation-name: floatAnimation;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  svg path {
+    width: 2px !important;
+    fill: $color-red !important;
+    stroke: none !important;
+  }
+
+  &:hover {
+    svg path {
+      fill: $color-primary-hover !important;
+    }
+  }
+
+  &:active {
+    svg path {
+      fill: $color-primary-pressed !important;
+    }
+  }
+}
+
+#headline {
+  position: relative;
 }

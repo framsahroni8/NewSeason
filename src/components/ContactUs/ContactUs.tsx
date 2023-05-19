@@ -19,7 +19,7 @@ const ContactUs = () => {
       <div className='contact'>
         <div className='contactContainer'>
           <div className=''>
-            <div className='contactText'>
+            <div className='contactText mb-6'>
               <TextDivider>Contact us!</TextDivider>
             </div>
             <div className='modalIcon'>

@@ -1,5 +1,6 @@
 import { Icon, OutletList, TextDivider } from 'ui-kit'
 import { OutletData } from 'ui-kit/OutletList'
+import './OutletPage.scss'
 import BannerLogo from '../../assets/images/Manadong-Ricebox-4.jpg'
 import { Link } from 'react-router-dom'
 
@@ -14,7 +15,7 @@ const Outlet: React.FC<OutletProps> = ({ OutletName, DataOutlet }) => {
       <div className=' w-screen'>
         <div className='flex ml-2'>
           <Link to='/order'>
-            <span className='text-black flex items-center gap-2'>
+            <span className='text-black flex items-center gap-2 btnBack'>
               <Icon type='ArrowLeft' size='medium' />
               Back
             </span>

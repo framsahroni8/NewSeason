@@ -2,15 +2,16 @@ import { Icon, IconType } from 'ui-kit'
 import './IconGroup.scss'
 
 export interface TypeIcon {
-    href: string
-    iconTypes: IconType
+  id: number
+  href: string
+  iconTypes: IconType
 }
 
 export interface IconGroups {
   options: TypeIcon[]
 }
 
-export const IconGroup: React.FC<IconGroups> = ({options}) => {
+export const IconGroup: React.FC<IconGroups> = ({ options }) => {
   return (
     <>
       {options.map((option) => (

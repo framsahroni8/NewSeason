@@ -3,17 +3,19 @@ import { RootState } from 'utils/redux/store'
 
 export const useAuth = () => {
   // Get user from Redux store
-  const user = useSelector((state: RootState) => state.login)
+  const loginState = useSelector((state: RootState) => state.login)
 
-  if (user.isLoggedIn) {
+  if (loginState.isLoggedIn) {
     return {
       auth: true,
-      user: user,
+      user: loginState.user,
+      token: loginState.token,
     }
   } else {
     return {
       auth: false,
       user: null,
+      token: '',
     }
   }
 }

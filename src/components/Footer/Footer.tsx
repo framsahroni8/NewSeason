@@ -5,18 +5,22 @@ import { TypeIcon } from 'ui-kit/IconGroup/IconGroup'
 const Footer = () => {
   const iconType: TypeIcon[] = [
     {
+      id:1,
       iconTypes: 'Facebook',
       href: '#',
     },
     {
+      id:2,
       iconTypes: 'Twitter',
       href: '#',
     },
     {
+      id:3,
       iconTypes: 'Message',
       href: '#',
     },
     {
+      id:4,
       iconTypes: 'WhatsApp',
       href: '"https://wa.link/lqkgvh',
     },

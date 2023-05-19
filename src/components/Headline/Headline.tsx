@@ -4,24 +4,12 @@ import './Headline.scss'
 import { Link } from 'react-router-dom'
 
 const Headline = () => {
-  const handleScroll = () => {
-    const targetElement = document.getElementById('menu')
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
   return (
     <>
       <div className='headlineContainer'>
         <div className='headlineImage'>
           <div>
             <img src={Banner} alt='banner-scaled' />
-            <div className='absolute'>
-              {/* <div className='iconContainer'>
-                <span>Scroll Dong!</span>
-                <Icon type='Down' size='large' onClick={handleScroll} />
-              </div> */}
-            </div>
           </div>
         </div>
         <div className='headlineWidget'>

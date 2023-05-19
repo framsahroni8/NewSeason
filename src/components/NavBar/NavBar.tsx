@@ -1,34 +1,33 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import './NavBar.scss'
-import { Button } from 'ui-kit'
-import Logo from '../../assets/logo/logo-navbar.png'
-import { useState } from 'react'
-import { Link as ScrollLink } from 'react-scroll'
+import {Link, useLocation, useNavigate } from 'react-router-dom';
+import './NavBar.scss';
+import { Button } from 'ui-kit';
+import Logo from '../../assets/logo/logo-navbar.png';
+import { useState } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 
 const navigationData = [
-  { name: 'Eatry', href: '#', current: false},
-  { name: 'Menu', href: '/#menu', current: false },
+  { name: 'Eatery', href: '#', current: false },
+  { name: 'Menu', href: '/home#menuSection', current: false },
   { name: 'Locations', href: '/locations', current: false },
   { name: 'Contact', href: '/contact', current: false },
-]
+];
 
 const Navbar = () => {
-  const navigate = useNavigate()
-  const [activePage, setActivePage] = useState('home')
+  const navigate = useNavigate();
+  const [activePage, setActivePage] = useState('home');
 
   const handleOrder = () => {
-    navigate('/order')
-  }
+    navigate('/order');
+  };
 
   const handleLogo = () => {
-    navigate('/')
-  }
+    navigate('/');
+  };
 
   const handleNavbarMenu = (name: string) => {
-    console.log('kepanggil' + name)
-    setActivePage(name)
-  }
-
+    console.log('kepanggil' + name);
+    setActivePage(name);
+  };
 
   return (
     <>
@@ -58,8 +57,13 @@ const Navbar = () => {
               >
                 {navigationData.map((item) => (
                   <li key={item.name}>
-                    <Link to={item.href}>{item.name}</Link>
-                  </li>
+                 <ScrollLink 
+                 to="/home#menuSection" smooth={true}>{item.name}
+                 </ScrollLink>
+                </li>
+                  // <li key={item.name}>
+                  //   <a href={item.href}>{item.name}</a> {/* Replace Link with anchor tag */}
+                  // </li>
                 ))}
               </ul>
             </div>
@@ -69,15 +73,10 @@ const Navbar = () => {
           </div>
 
           <div className='navHidden'>
-          <ul className='menu menu-horizontal px-1 hidden lg:flex'>
+            <ul className='menu menu-horizontal px-1 hidden lg:flex'>
               {navigationData.map((item) => (
-                <li
-                  className={activePage === item.name ? 'navActive' : ''}
-                  key={item.name}
-                >
-                  <Link onClick={() => handleNavbarMenu(item.name)} to={item.href}>
-                    {item.name}
-                  </Link>
+                <li className={activePage === item.name ? 'navActive' : ''} key={item.name}>
+                  <a onClick={() => handleNavbarMenu(item.name)} href={item.href}>{item.name}</a> {/* Replace Link with anchor tag */}
                 </li>
               ))}
             </ul>
@@ -88,7 +87,7 @@ const Navbar = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
