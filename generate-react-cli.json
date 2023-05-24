@@ -30,5 +30,6 @@
         "index": "src/templates/index.ts"
       }
     }
-  }
+  },
+  "usesStyledComponents": false
 }

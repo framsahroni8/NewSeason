@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Router, Routes, Route, Navigate, useLocation, Link, useNavigate } from 'react-router-dom'
 import {
   Contact,
   GoFoodPage,
@@ -9,41 +9,42 @@ import {
   OrderPage,
   ShopeeFood,
 } from 'pages'
-import { Menu, PublicRoutes } from 'components'
-import { Link as ScrollLink } from 'react-scroll'
-import { ContactUs } from 'components/ContactUs'
+import { RouteMenuComponent, handleScroll, } from 'pages/Home/Home'
+
+// const HomeWithClickEvent = () => {
+//   const navigate = useNavigate();
+
+//   const handleClick = () => {
+//     // Handle the click event here
+//     console.log('Home clicked!');
+//     // You can perform any additional actions or navigation logic here
+//     navigate('/');
+//   };
+
+//   return (
+//     <Home onClick={handleScroll} />
+//   );
+// };
 
 const MainRoutes = () => {
-  const location = useLocation()
-
   return (
-    <Routes>
-      {/** Public Routes */}
-      {/** Wrap all Route under PublicRoutes element */}
-      <Route path='/' element={<PublicRoutes />}>
-        <Route path='/' element={<Navigate to='home' replace />} />
-        <Route path='home' element={<Home />} />
-        <>
-          {location.pathname !== '/' && (
-            <>
-              <Route
-                path={Home + '/#menuSection'}
-                element={<ScrollLink to='menuSection' smooth={true} />}
-              />
-            </>
-          )}
-        </>
-
-        <Route path='/Contact' element={<Contact />} />
-        <Route path='/locations' element={<LocationPage />} />
-        <Route path='/order' element={<OrderPage />} />
-        <Route path='/GoFood' element={<GoFoodPage />} />
-        <Route path='/GrabFood' element={<GrabFood />} />
-        <Route path='/ShopeeFood' element={<ShopeeFood />} />
-      </Route>
-      {/** Permission denied route */}
-      <Route path='/denied' element={<NotFound />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route>
+          <Route path='/' element={<Home />} />
+          <Route path='home' element={<Home />} />
+          <Route path='menuSection' element={<Home/>}/>
+          <Route path='locations' element={<LocationPage />} />
+          <Route path='contact' element={<Contact />} />
+          <Route path='order' element={<OrderPage />} />
+          <Route path='gofood' element={<GoFoodPage />} />
+          <Route path='grabfood' element={<GrabFood />} />
+          <Route path='shopeefood' element={<ShopeeFood />} />
+        </Route>
+        {/** Permission denied route */}
+        <Route path='/denied' element={<NotFound />} />
+      </Routes>
+    </>
   )
 }
 

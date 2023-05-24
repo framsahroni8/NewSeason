@@ -2,8 +2,14 @@ import { ContactUs } from 'components/ContactUs'
 import { ModalContact } from 'ui-kit/ModalContact'
 import { modalProps } from 'ui-kit/ModalContact/ModalContact'
 import './Contact.scss'
+import AOS from 'aos'
+import 'aos/dist/aos.css' // Impor stylesheet AOS
+import { useEffect } from 'react'
 
 const Contact = () => {
+  useEffect(() => {
+    AOS.init()
+  }, [])
   const modalData: modalProps[] = [
     {
       logo: 'WhatsApp',
@@ -15,8 +21,10 @@ const Contact = () => {
   ]
 
   return (
-    <div className='contactBox h-screen'>
-      <ContactUs/>
+    <div className='contactBox' data-aos='fade-down' data-aos-duration='3000'>
+      <div className='flexContact'>
+        <ContactUs />
+      </div>
     </div>
   )
 }

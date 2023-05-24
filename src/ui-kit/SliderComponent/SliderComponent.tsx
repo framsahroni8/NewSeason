@@ -19,28 +19,26 @@ export interface ReviewProps {
 }
 
 const swiperBreakPoints ={
-  // when window width is >= 640px
-  100: {
+  300: {
     slidesPerView: 1,
-    spaceBetween: 10,
+    spaceBetween: '10',
   },
-  // when window width is >= 768px
-  540: {
-    slidesPerView: 2,
-    spaceBetween: 90,
-  },
-  // when window width is >= 1024px
   768: {
-    slidesPerView: 3,
-    spacesBetween: 30
+    slidesPerView: 2,
+    spaceBetween: '20', // Mengatur jarak antara slider menjadi 20 piksel saat lebar >= 768px
   },
+  1024: {
+    slidesPerView: 3,
+    spaceBetween: '30',
+  }
 }
 
 export const SliderComponent: React.FC<ReviewProps> = ({ options }) => {
   return (
     <Swiper
-      spaceBetween={70}
-      slidesPerView={2}
+    className='swiper-gap'
+      spaceBetween={0}
+      slidesPerView={3}
       breakpoints={swiperBreakPoints}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}

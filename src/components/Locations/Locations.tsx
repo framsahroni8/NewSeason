@@ -57,15 +57,15 @@ export const LocationDetail: LocationData[] = [
 
 const Locations = () => {
   return (
-    <div className='locationsWrapper'>
-      <div className='locationsContainer'>
+    <div className=''>
+      <div className=''>
         <div>
           <div className='locationsTitle mb-5'>
             <TextDivider>Locations</TextDivider>
           </div>
         </div>
-        <div>
-          <LocationDetailComponent isMap={false} options={LocationDetail} />
+        <div className=''>
+            <LocationDetailComponent isMap={false} options={LocationDetail} />
         </div>
       </div>
     </div>

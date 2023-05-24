@@ -66,7 +66,7 @@ export const menuData: menuImage[] = [
 const Menu = () => {
   return (
     <section id='menuSection'>
-      <div className='menuWrapper' id='menuSection'>
+      <div className='menuWrapper w-full' id='menuSection'>
         <div className=''>
           <div className='menuText'>
             <TextDivider>Our Menu</TextDivider>

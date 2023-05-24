@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { loginSuccess } from 'utils/redux/slice/login.slice'
+// import { loginSuccess } from 'utils/redux/slice/login.slice'
 import './Login.scss'
 
 const Login = () => {
@@ -16,7 +16,7 @@ const Login = () => {
     // TODO: Add login logic here
 
     // Once the user is logged in, navigate to the home page
-    dispatch(loginSuccess('token'))
+    // dispatch(loginSuccess('token'))
     navigate('/home')
   }
 

@@ -1,9 +1,20 @@
 import { Button, Icon } from 'ui-kit'
 import Banner from '../../assets/images/banner-scaled.jpg'
 import './Headline.scss'
-import { Link } from 'react-router-dom'
+import { useMediaQuery } from 'react-responsive';
+import { useEffect } from 'react';
 
 const Headline = () => {
+  // const isMobile = useMediaQuery({ maxWidth: 1920 });
+  // useEffect(() => {
+  //   const metaViewport = document.querySelector('meta[name="viewport"]');
+  //   if (metaViewport) {
+  //     metaViewport.setAttribute(
+  //       'content',
+  //       isMobile ? 'width=device-width, initial-scale=1' : 'width=1366'
+  //     );
+  //   }
+  // }, [isMobile]);
   return (
     <>
       <div className='headlineContainer'>

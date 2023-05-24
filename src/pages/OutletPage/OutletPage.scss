@@ -10,3 +10,10 @@
         }
     }
 }
+
+.outletHeight{
+    min-height: calc(100vh - 200px); /* Sesuaikan dengan tinggi footer */
+
+  /* Tambahkan properti berikut untuk mengatur jarak dari footer */
+  margin-bottom: 80px; /* Sesuaikan jarak yang diinginkan */
+}

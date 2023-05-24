@@ -1,33 +1,40 @@
-import {Link, useLocation, useNavigate } from 'react-router-dom';
-import './NavBar.scss';
-import { Button } from 'ui-kit';
-import Logo from '../../assets/logo/logo-navbar.png';
-import { useState } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import './NavBar.scss'
+import { Button } from 'ui-kit'
+import Logo from '../../assets/logo/logo-navbar.png'
+import { useState } from 'react'
+import { Link as ScrollLink } from 'react-scroll'
 
 const navigationData = [
   { name: 'Eatery', href: '#', current: false },
-  { name: 'Menu', href: '/home#menuSection', current: false },
-  { name: 'Locations', href: '/locations', current: false },
-  { name: 'Contact', href: '/contact', current: false },
-];
+  { name: 'Menu', href: '', href2: 'menuSection', current: false },
+  { name: 'Locations', href: 'locations', current: false },
+  { name: 'Contact', href: 'contact', current: false },
+]
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const [activePage, setActivePage] = useState('home');
+  const navigate = useNavigate()
+  const [activePage, setActivePage] = useState('home')
 
+  const handleScroll = () => {
+    const targetElement = document.getElementById('menuSection')
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   const handleOrder = () => {
-    navigate('/order');
-  };
+    navigate('/order')
+  }
 
   const handleLogo = () => {
-    navigate('/');
-  };
+    navigate('/')
+    setActivePage('home')
+  }
 
   const handleNavbarMenu = (name: string) => {
-    console.log('kepanggil' + name);
-    setActivePage(name);
-  };
+    console.log('kepanggil' + name)
+    setActivePage(name)
+  }
 
   return (
     <>
@@ -56,14 +63,9 @@ const Navbar = () => {
                 className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52 pr-[200px] hidden max-lg:flex'
               >
                 {navigationData.map((item) => (
-                  <li key={item.name}>
-                 <ScrollLink 
-                 to="/home#menuSection" smooth={true}>{item.name}
-                 </ScrollLink>
-                </li>
-                  // <li key={item.name}>
-                  //   <a href={item.href}>{item.name}</a> {/* Replace Link with anchor tag */}
-                  // </li>
+                  <li key={item.name} className='w-[200px]'>
+                    <NavLink to={item.href}>{item.name}</NavLink>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -76,7 +78,15 @@ const Navbar = () => {
             <ul className='menu menu-horizontal px-1 hidden lg:flex'>
               {navigationData.map((item) => (
                 <li className={activePage === item.name ? 'navActive' : ''} key={item.name}>
-                  <a onClick={() => handleNavbarMenu(item.name)} href={item.href}>{item.name}</a> {/* Replace Link with anchor tag */}
+                  {item.name === 'Menu' ? (
+                    <NavLink onClick={handleScroll} to={item.href}>
+                      {item.name}
+                    </NavLink>
+                  ) : (
+                    <NavLink onClick={() => handleNavbarMenu(item.name)} to={item.href}>
+                      {item.name}
+                    </NavLink>
+                  )}
                 </li>
               ))}
             </ul>
@@ -87,7 +97,7 @@ const Navbar = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

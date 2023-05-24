@@ -1,8 +1,11 @@
-import { Icon, OutletList, TextDivider } from 'ui-kit'
+import { Button, Icon, OutletList, TextDivider } from 'ui-kit'
 import { OutletData } from 'ui-kit/OutletList'
 import './OutletPage.scss'
 import BannerLogo from '../../assets/images/Manadong-Ricebox-4.jpg'
 import { Link } from 'react-router-dom'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Impor stylesheet AOS
+import { useEffect } from 'react';
 
 export interface OutletProps {
   OutletName: string
@@ -10,23 +13,27 @@ export interface OutletProps {
 }
 
 const Outlet: React.FC<OutletProps> = ({ OutletName, DataOutlet }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
-      <div className=' w-screen'>
-        <div className='flex ml-2'>
+    <div className='flex my-4 mx-16' data-aos="fade-down"
+    data-aos-duration="3000">
           <Link to='/order'>
-            <span className='text-black flex items-center gap-2 btnBack'>
-              <Icon type='ArrowLeft' size='medium' />
+            <Button>
               Back
-            </span>
+            </Button>
           </Link>
         </div>
+      <div className='outletHeight flex justify-center' data-aos="fade-down"
+    data-aos-duration="3000">
         <div className='flex'>
-          <div className='flex p-6 justify-center gap-7'>
-            <div className='w-[40%]'>
+          <div className='flex p-4 justify-center gap-7  max-md:flex-col'>
+            <div className='w-[50%] max-md:w-full'>
               <img src={BannerLogo} />
             </div>
-            <div className='w-[40%] text-black'>
+            <div className='w-[40%] text-black max-md:w-full'>
               <TextDivider>{OutletName}</TextDivider>
               <OutletList options={DataOutlet} />
             </div>

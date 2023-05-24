@@ -9,11 +9,13 @@ export type OrderType = 'Primary' | 'Secondary' | 'Success'
 
 export interface OrderButtonData {
   id: number
-  Icon: IconType
-  size: IconSizeType
   text: string
   type: OrderType
   link: string
+  icon: IconType
+  size: IconSizeType
+  logo?: string
+  alt: string
 }
 
 export interface OrderButtonProps {
@@ -23,26 +25,37 @@ export interface OrderButtonProps {
 
 export const OrderButton: React.FC<OrderButtonProps> = ({ options, className }) => {
   return (
-    <div className='flex flex-col gap-3 '>
+    <div className='flex flex-col justify-center gap-3 '>
       {options.map((option) => (
         <>
-        <Link to={option.link}>
-          <Button
-            typeIcon={option.Icon}
+          <Link to={option.link} key={option.id}>
+            <Button
+            typeIcon={option.icon}
             sizeIcon={option.size}
-            className={classNames(' w-full btnOrder', className, {
-              'btnOrder__primary': option.type === 'Primary',
-              'btnOrder__secondary': option.type === 'Success',
-              'btnOrder__success': option.type === 'Secondary',
-            })}
-          >
-            <span>{option.text}</span>
-          </Button>
-        </Link>
+              className={classNames('btnOrder', className, {
+                btnOrder__primary: option.type === 'Primary',
+                btnOrder__secondary: option.type === 'Success',
+                btnOrder__success: option.type === 'Secondary',
+              })}
+              iconRight
+            >
+              <div className='textJustify'>
+                <span>{option.text}</span>
+                <div>
+                {/* <img src={option.logo} alt={option.alt} className='orderLogo' /> */}
+                </div>
+               
+              </div>
+            </Button>
+          </Link>
         </>
-        
       ))}
     </div>
   )
 }
-// ' w-full btnOrder'
+
+{
+  /* <div className='textJustify'>
+                  
+              </div> */
+}

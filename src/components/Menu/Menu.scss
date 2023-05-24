@@ -1,6 +1,8 @@
 @import 'ui-kit/styles';
 
 .menuWrapper {
+  display: flex;
+  flex-direction: column;
   // padding-top: 50px;
   // padding-left: 88px;
   // padding-right: 88px;

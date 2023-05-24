@@ -1,5 +1,14 @@
 $base-font-family: "Soin Sans Neue", sans-serif;
 
+/* SoinSansNeue/10/Regular */
+@mixin SoinSansNeue-10-regular {
+  font-family: $base-font-family;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.25;
+
+}
 /* SoinSansNeue/12/Regular */
 @mixin SoinSansNeue-12-regular {
   font-family: $base-font-family;

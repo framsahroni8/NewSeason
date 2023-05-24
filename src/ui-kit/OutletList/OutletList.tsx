@@ -19,13 +19,13 @@ export const OutletList: React.FC<OutletDataProps> = ({ options }) => {
       {options.map((option) => (
         <>
           <div className='outletContainer w-full py-3'>
-            <div>
+            <div className='w-[50%]'>
               <span className='OutletLocation'>{option.Location}</span>
             </div>
             <Link to={option.link}>
-              <div className='outletBody'>
-                <span className=''>
-                  {option.text} <Icon type='ArrowRight' size='small' />
+              <div className='outletBody flex w-[100%]'>
+                <span className='outletBody'>
+                  {option.text} <Icon type='ArrowRight' className='outletLink'/>
                 </span>
               </div>
             </Link>
