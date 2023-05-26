@@ -60,6 +60,9 @@
   transform: translateX(-50%);
   z-index: 999; /* Atur z-index agar ikon tetap di atas elemen lain */
   color: #000000; /* Atur warna ikon sesuai kebutuhan */
+  @media(max-width: 767px){
+    visibility: hidden;
+  }
 }
 
 .scrollText {
@@ -70,6 +73,10 @@
   transform: translateX(-50%);
   z-index: 999; /* Atur z-index agar ikon tetap di atas elemen lain */
   color: red; /* Atur warna ikon sesuai kebutuhan */
+
+  @media(max-width: 767px){
+    visibility: hidden;
+  }
 }
 
 .iconContainer {

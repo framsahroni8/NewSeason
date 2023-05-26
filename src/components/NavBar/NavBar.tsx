@@ -6,26 +6,39 @@ import { useState } from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 
 const navigationData = [
-  { name: 'Eatery', href: '#', current: false },
-  { name: 'Menu', href: '', href2: 'menuSection', current: false },
+  { name: 'Eatery', href: '#', current: true },
+  { name: 'Menu', href: 'menuSection', current: false },
   { name: 'Locations', href: 'locations', current: false },
   { name: 'Contact', href: 'contact', current: false },
 ]
+
+export const handleScroll = () => {
+  console.log('Kepencet Scoll')
+  const targetElement = document.getElementById('menuSection')
+  if (targetElement) {
+    const targetPosition = targetElement.getBoundingClientRect().top
+    const scrollPosition = targetPosition + window.scrollY
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth',
+    })
+  }
+}
 
 const Navbar = () => {
   const navigate = useNavigate()
   const [activePage, setActivePage] = useState('home')
 
-  const handleScroll = () => {
-    const targetElement = document.getElementById('menuSection')
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+  const updatedNavigationData = navigationData.map((item) => ({
+    ...item,
+    current: item.name === activePage,
+  }))
+
   const handleOrder = () => {
     navigate('/order')
+    setActivePage('home')
   }
-
+  
   const handleLogo = () => {
     navigate('/')
     setActivePage('home')
@@ -76,10 +89,16 @@ const Navbar = () => {
 
           <div className='navHidden'>
             <ul className='menu menu-horizontal px-1 hidden lg:flex'>
-              {navigationData.map((item) => (
-                <li className={activePage === item.name ? 'navActive' : ''} key={item.name}>
+              {updatedNavigationData.map((item) => (
+                <li className={item.name === 'Eatery' ? '' : item.current ? 'navActive' : ''} key={item.name}>
                   {item.name === 'Menu' ? (
-                    <NavLink onClick={handleScroll} to={item.href}>
+                    <NavLink
+                      onClick={() => {
+                        handleNavbarMenu(item.name)
+                        handleScroll()
+                      }}
+                      to={item.href}
+                    >
                       {item.name}
                     </NavLink>
                   ) : (
@@ -90,7 +109,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <Button className='btn-navbar' onClick={handleOrder}>
+            <Button className='btn-navbar'  onClick={handleOrder}>
               Order Now
             </Button>
           </div>

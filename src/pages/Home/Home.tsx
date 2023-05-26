@@ -10,13 +10,9 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Icon } from 'ui-kit'
 import { useParams } from 'react-router-dom'
+import { handleScroll } from 'components/NavBar/NavBar'
 
-export const handleScroll = () => {
-  const targetElement = document.getElementById('menuSection')
-  if (targetElement) {
-    targetElement.scrollIntoView({ behavior: 'smooth' })
-  }
-}
+
 
 export const RouteMenuComponent = () => {
   // Your routeMenu logic here
@@ -71,7 +67,7 @@ const Home = () => {
       window.removeEventListener('scroll', handleScrollAnimation)
     }
   }, [])
-  
+
   return (
     <>
       <div className='w-full flex flex-col items-center'>
@@ -87,15 +83,15 @@ const Home = () => {
           </div>
         </div>
         <div className='w-full flex flex-col justify-center py-10 gap-10'>
-          <section  id='menuSection' className='w-[100%] flex flex-col items-center'>
+          <section id='menuSection' className='w-[100%] flex flex-col items-center'>
             <div className='w-full flex justify-center'>
-              <div className='w-[60%] py-5 max-lg:w-screen componentPosition' data-aos = 'zoom-in'>
+              <div className='w-[60%] py-5 max-lg:w-screen componentPosition' data-aos='zoom-in'>
                 <Menu />
               </div>
             </div>
           </section>
           <div className='flex justify-center w-full componentPosition '>
-            <div className='w-[60%]  max-lg:w-screen  py-5' data-aos = 'zoom-in'>
+            <div className='w-[60%]  max-lg:w-screen  py-5' data-aos='zoom-in'>
               <Locations />
             </div>
           </div>
@@ -106,7 +102,7 @@ const Home = () => {
           </div>
           <div className='w-full flex justify-center'>
             <div className=' w-[100%] flex justify-center py-5'>
-              <div className='w-[100%] flex justify-center max-lg:w-[95%]' data-aos = 'zoom-in'>
+              <div className='w-[100%] flex justify-center max-lg:w-[95%]' data-aos='zoom-in'>
                 <ContactUs />
               </div>
             </div>

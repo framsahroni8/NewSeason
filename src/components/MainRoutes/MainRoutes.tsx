@@ -9,22 +9,6 @@ import {
   OrderPage,
   ShopeeFood,
 } from 'pages'
-import { RouteMenuComponent, handleScroll, } from 'pages/Home/Home'
-
-// const HomeWithClickEvent = () => {
-//   const navigate = useNavigate();
-
-//   const handleClick = () => {
-//     // Handle the click event here
-//     console.log('Home clicked!');
-//     // You can perform any additional actions or navigation logic here
-//     navigate('/');
-//   };
-
-//   return (
-//     <Home onClick={handleScroll} />
-//   );
-// };
 
 const MainRoutes = () => {
   return (

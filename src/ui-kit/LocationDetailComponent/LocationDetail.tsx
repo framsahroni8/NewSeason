@@ -2,10 +2,11 @@ import { Icon } from 'ui-kit/Icon'
 import './LocationDetail.scss'
 
 export interface LocationData {
-  id: number
-  title: string
-  detail: string
-  map?: string
+  id: string;
+  storeLocation?: string;
+  storeLocationDetail?: string;
+  storeLocationMap?: string;
+  storeLocationOutlet?: string[];
 }
 
 export interface iLocationProps {
@@ -19,18 +20,18 @@ export const LocationDetailComponent: React.FC<iLocationProps> = ({ options, isM
       {options.map((option) => (
         <>
           {isMap ? (
-            <div className='locationContainerIsMap items-center'>
+            <div className='locationContainerIsMap items-center' key={option.id}>
               <div className='flex gap-[15px] w-[60%] items-center max-md:w-full'>
                 <div>
                   <Icon type='Location' className='icon' />
                 </div>
                 <div className='locationText max-md:h-32 max-md:justify-center md:h-10'>
-                  <div className='locationText-title'>{option.title}</div>
-                  <div className='locationText-body'>{option.detail}</div>
+                  <div className='locationText-title'>{option.storeLocation}</div>
+                  <div className='locationText-body'>{option.storeLocationDetail}</div>
                 </div>
               </div>
               <div className='locationMap w-[40%] max-md:w-full'>
-                <iframe src={option.map} width='100%' height='260px'></iframe>
+                <iframe src={option.storeLocationMap} width='100%' height='260px'></iframe>
               </div>
             </div>
           ) : (
@@ -39,8 +40,8 @@ export const LocationDetailComponent: React.FC<iLocationProps> = ({ options, isM
                 <Icon type='Location' className='icon' />
               </div>
               <div className='locationText h-12'>
-                <div className='locationText-title'>{option.title}</div>
-                <div className='locationText-body'>{option.detail}</div>
+                <div className='locationText-title'>{option.storeLocation}</div>
+                <div className='locationText-body'>{option.storeLocationDetail}</div>
               </div>
             </div>
           )}

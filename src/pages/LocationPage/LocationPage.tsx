@@ -1,16 +1,41 @@
-import Locations, { LocationDetail } from 'components/Locations/Locations'
-import { LocationDetailComponent } from 'ui-kit/LocationDetailComponent'
-import { LocationsMap } from 'ui-kit/LocationsMap'
+import Locations from 'components/Locations/Locations'
+import { LocationData, LocationDetailComponent } from 'ui-kit/LocationDetailComponent'
 import { TextDivider } from 'ui-kit/TextDivider'
 import './LocationPage.scss'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Impor stylesheet AOS
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { db } from '../../config/Firebase'
+import { getDocs, collection } from 'firebase/firestore'
 
 const LocationPage = () => {
+  const [locations, setLocations] = useState<LocationData[]>([])
   useEffect(() => {
+    const fetchLocations = async () => {
+      try {
+        const locationQuerySnapshot = await getDocs(collection(db, 'Location'));
+        const fetchedLocations: LocationData[] = [];
+        locationQuerySnapshot.forEach((doc) => {
+          const location = doc.data();
+          fetchedLocations.push({
+            id: location.id,
+            storeLocation: location.storeLocation,
+            storeLocationDetail: location.storeLocationDetail,
+            storeLocationMap: location.storeLocationMap,
+            // storeLocationOutlet: location.storeLocationOutlet,
+          });
+        });
+        setLocations(fetchedLocations);
+      } catch (error) {
+        console.log('Error fetching locations:', error);
+      }
+    };
+
+    fetchLocations();
     AOS.init();
   }, []);
+
+
   
   return (
     <div className='locationPageWrapper' data-aos="fade-up"
@@ -19,7 +44,7 @@ const LocationPage = () => {
         <TextDivider>Locations</TextDivider>
       </div>
       <div>
-        <LocationDetailComponent isMap options={LocationDetail} />
+        <LocationDetailComponent isMap options={locations} />
       </div>
     </div>
   )
