@@ -1,60 +1,35 @@
 import { TextDivider } from 'ui-kit/TextDivider'
 import './Reviews.scss'
 import SliderComponent, { ReviewData } from 'ui-kit/SliderComponent'
+import { db } from '../../config/Firebase'
+import { getDocs, collection } from 'firebase/firestore'
+import { useState, useEffect } from 'react'
+
 
 const Reviews = () => {
-  const ReviewData: ReviewData[] = [
-    {
-      id: 1,
-      comment: 'Comment 1',
-      name: 'Orang 1',
-    },
-    {
-      id: 2,
-      comment: 'Comment 2',
-      name: 'Orang 2',
-    },
-    {
-      id: 3,
-      comment: 'Comment 3',
-      name: 'Orang 3',
-    },
-    {
-      id: 4,
-      comment: 'Comment 4',
-      name: 'Orang 4',
-    },
-    {
-      id: 5,
-      comment: 'Comment 5',
-      name: 'Orang 5',
-    },
-    {
-      id: 6,
-      comment: 'Comment 6',
-      name: 'Orang 6',
-    },
-    {
-      id: 7,
-      comment: 'Comment 7',
-      name: 'Orang 7',
-    },
-    {
-      id: 8,
-      comment: 'Comment 8',
-      name: 'Orang 8',
-    },
-    {
-      id: 9,
-      comment: 'Comment 9',
-      name: 'Orang 9',
-    },
-    {
-      id: 10,
-      comment: 'Comment 10',
-      name: 'Orang 10',
-    },
-  ]
+  const [comment, setComment] = useState<ReviewData[]>([])
+  useEffect(() => {
+    const fetchLocations = async () => {
+      try {
+        const locationQuerySnapshot = await getDocs(collection(db, 'Comment'));
+        const fetchedLocations: ReviewData[] = [];
+        locationQuerySnapshot.forEach((doc) => {
+          const comment = doc.data();
+          fetchedLocations.push({
+            id: comment.id,
+            comment: comment.comment,
+            name: comment.name,
+          });
+        });
+        setComment(fetchedLocations);
+      } catch (error) {
+        console.log('Error fetching locations:', error);
+      }
+    };
+
+    fetchLocations();
+  }, []);
+
 
   return (
     <div className='reviewsWrapper'>
@@ -64,7 +39,7 @@ const Reviews = () => {
         </div>
         <div>
           <div className='pt-8'>
-            <SliderComponent options={ReviewData} />
+            <SliderComponent options={comment} />
           </div>
         </div>
       </div>

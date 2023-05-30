@@ -4,7 +4,7 @@ import { ContactUs } from 'components/ContactUs'
 import { Menu } from 'components/Menu'
 import { Locations } from 'components/Locations'
 import { Reviews } from 'components/Reviews'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -14,19 +14,11 @@ import { handleScroll } from 'components/NavBar/NavBar'
 
 
 
-export const RouteMenuComponent = () => {
-  // Your routeMenu logic here
-  const routeMenu = () => {
-    const menuSection = document.getElementById('menuSection')
-    if (menuSection) {
-      menuSection.click()
-    }
-  }
-}
-
 const Home = () => {
-  const [fadeIn, setFadeIn] = useState(false)
-  const [isScrollingDown, setIsScrollingDown] = useState(false)
+  const menuSectionRef = useRef<HTMLDivElement>(null);
+
+  const [fadeIn, setFadeIn] = useState<boolean>(false)
+  const [isScrollingDown, setIsScrollingDown] = useState<boolean>(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,7 +75,7 @@ const Home = () => {
           </div>
         </div>
         <div className='w-full flex flex-col justify-center py-10 gap-10'>
-          <section id='menuSection' className='w-[100%] flex flex-col items-center'>
+          <section id='menuSection' ref={menuSectionRef} className='w-[100%] flex flex-col items-center'>
             <div className='w-full flex justify-center'>
               <div className='w-[60%] py-5 max-lg:w-screen componentPosition' data-aos='zoom-in'>
                 <Menu />
@@ -100,12 +92,10 @@ const Home = () => {
               <Reviews />
             </div>
           </div>
-          <div className='w-full flex justify-center'>
-            <div className=' w-[100%] flex justify-center py-5'>
+            <div className=' w-[100%] flex justify-center py-8'>
               <div className='w-[100%] flex justify-center max-lg:w-[95%]' data-aos='zoom-in'>
                 <ContactUs />
               </div>
-            </div>
           </div>
         </div>
       </div>

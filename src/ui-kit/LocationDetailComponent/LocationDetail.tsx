@@ -3,10 +3,10 @@ import './LocationDetail.scss'
 
 export interface LocationData {
   id: string;
-  storeLocation?: string;
-  storeLocationDetail?: string;
-  storeLocationMap?: string;
-  storeLocationOutlet?: string[];
+  storeLocation: string;
+  storeLocationDetail: string;
+  storeLocationMap: string;
+  storeLocationOutlet: string;
 }
 
 export interface iLocationProps {

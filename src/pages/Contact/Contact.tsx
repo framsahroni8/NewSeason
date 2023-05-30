@@ -22,9 +22,7 @@ const Contact = () => {
 
   return (
     <div className='contactBox' data-aos='fade-down' data-aos-duration='3000'>
-      <div className='flexContact'>
         <ContactUs />
-      </div>
     </div>
   )
 }

@@ -10,60 +10,37 @@ import { TextDivider } from 'ui-kit/TextDivider'
 import './Menu.scss'
 import { Button } from 'ui-kit'
 import { Link } from 'react-router-dom'
+import { db } from '../../config/Firebase'
+import { getDocs, collection } from 'firebase/firestore'
+import { useState, useEffect } from 'react'
 
-export const menuData: menuImage[] = [
-  {
-    id: 1,
-    data: {
-      name: 'Cakalang Rabe',
-      src: CakalangRabe,
-    },
-  },
-  {
-    id: 2,
-    data: {
-      name: 'Cakalang Tinorasak',
-      src: CakalangTinorasak,
-    },
-  },
-  {
-    id: 3,
-    data: {
-      name: 'Ayam Rica',
-      src: AyamRica,
-    },
-  },
-  {
-    id: 4,
-    data: {
-      name: 'Ayam Woku',
-      src: AyamWoku,
-    },
-  },
-  {
-    id: 5,
-    data: {
-      name: 'Cumi Hitam',
-      src: CumiHitam,
-    },
-  },
-  {
-    id: 6,
-    data: {
-      name: 'Lauk Frozen',
-      src: LaukFrozen,
-    },
-  },
-  {
-    id: 7,
-    data: {
-      name: 'Perkedel Jagung',
-      src: PerkedelJagung,
-    },
-  },
-]
 
 const Menu = () => {
+  const [menu, setMenu] = useState<menuImage[]>([])
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const locationQuerySnapshot = await getDocs(collection(db, 'Menu'));
+        const fetchedMenu: menuImage[] = [];
+        locationQuerySnapshot.forEach((doc) => {
+          const menu = doc.data();
+          fetchedMenu.push({
+            id: menu.id,
+            data: {
+              src: menu.url,
+              name: menu.name,
+            }
+          });
+        });
+        setMenu(fetchedMenu);
+      } catch (error) {
+        console.log('Error fetching locations:', error);
+      }
+    };
+
+    fetchMenu();
+  }, []);
+
   return (
     <section id='menuSection'>
       <div className='menuWrapper w-full' id='menuSection'>
@@ -72,7 +49,7 @@ const Menu = () => {
             <TextDivider>Our Menu</TextDivider>
           </div>
           <div>
-            <MenuDetail options={menuData} />
+            <MenuDetail options={menu} />
           </div>
         </div>
         <div className='flex justify-end'>

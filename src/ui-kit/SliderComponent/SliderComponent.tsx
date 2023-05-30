@@ -5,11 +5,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation';
+import { useEffect, useRef } from 'react';
 // import 'swiper/swiper.min.css';
 // import 'swiper/components/navigation/navigation.min.css';
 
 export interface ReviewData {
-  id: number
+  id: string
   comment: string
   name: string
 }
@@ -34,6 +35,7 @@ const swiperBreakPoints ={
 }
 
 export const SliderComponent: React.FC<ReviewProps> = ({ options }) => {
+ 
   return (
     <Swiper
     className='swiper-gap'

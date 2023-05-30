@@ -1,15 +1,15 @@
 import { Button, Icon, OutletList, TextDivider } from 'ui-kit'
-import { OutletData } from 'ui-kit/OutletList'
 import './OutletPage.scss'
 import BannerLogo from '../../assets/images/Manadong-Ricebox-4.jpg'
 import { Link } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Impor stylesheet AOS
 import { useEffect } from 'react';
+import { LocationData } from 'ui-kit/LocationDetailComponent';
 
 export interface OutletProps {
   OutletName: string
-  DataOutlet: OutletData[]
+  DataOutlet: LocationData[]
 }
 
 const Outlet: React.FC<OutletProps> = ({ OutletName, DataOutlet }) => {
