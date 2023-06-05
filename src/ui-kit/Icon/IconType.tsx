@@ -13,6 +13,7 @@ import { ReactComponent as Facebook} from '../assets/icons/Facebook.svg'
 import { ReactComponent as GoFood} from '../assets/icons/GoFood.svg'
 import { ReactComponent as GrabFood} from '../assets/icons/GrabFood.svg'
 import { ReactComponent as Home } from '../assets/icons/Home.svg'
+import { ReactComponent as Instagram } from '../assets/icons/Instagram.svg'
 import { ReactComponent as Location} from '../assets/icons/Location.svg'
 import { ReactComponent as Message} from '../assets/icons/Message.svg'
 import { ReactComponent as Minus } from '../assets/icons/Minus.svg'
@@ -42,6 +43,7 @@ export type IconType =
   | 'GoFood'
   | 'GrabFood'
   | 'Home'
+  | 'Instagram'
   | 'Location'
   | 'Message'
   | 'Minus'
@@ -71,6 +73,7 @@ export const iconTypes = new Map([
   ['GoFood', <GoFood key={newGuid()} />],
   ['GrabFood', <GrabFood key={newGuid()} />],
   ['Home', <Home key={newGuid()} />],
+  ['Instagram', <Instagram key={newGuid()} />],
   ['Location', <Location key={newGuid()} />],
   ['Message', <Message key={newGuid()} />],
   ['Minus', <Minus key={newGuid()} />],

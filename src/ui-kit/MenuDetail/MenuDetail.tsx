@@ -29,7 +29,9 @@ export const MenuDetail: React.FC<menuProps> = ({ options }) => {
         {options.map((option) => (
           <div className='detailWrapper  menuContainer' key={option.id}>
             <div className='detailImage'>
+              <div className='crop'>
               <img src={option.data.src} onClick={() => handleImageClick(option)} />
+              </div>
             </div>
             <div className='text-black'>
               <span>{option.data.name}</span>
