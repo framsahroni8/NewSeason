@@ -30,9 +30,9 @@
 }
 
 .footerDetail {
-  gap: 20px;
   display: flex;
-  align-items: center; /* Menyelaraskan elemen secara vertikal */
+  align-items: center;
+  gap: 20px;
   svg path {
     fill: $color-primary;
   }
@@ -43,23 +43,20 @@
   @media (max-width: 767px) {
     gap: 8px;
     padding-top: 14px;
-  }
-
-  @media (max-width: 767px) {
     justify-content: space-between;
   }
 }
 
 .footerShare {
-  gap: 15px;
+  gap: 10px;
   display: flex;
   align-items: center;
 }
 
 .footerLogo {
-  gap: 15px;
+  gap: 20px;
   display: flex;
-  align-items: center; /* Menyelaraskan elemen secara vertikal */
+  align-items: center;
   svg path {
     fill: $color-primary;
   }

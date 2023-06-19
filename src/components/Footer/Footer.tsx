@@ -33,8 +33,10 @@ const Footer = () => {
           <span>&copy; PT Bogadong Anugerah Indonesia, 2022</span>
         </div>
         <div className='footerDetail'>
-          <span>Share Manadong</span>
+          <span className='footerShare'>Share Manadong</span>
+          <div className='footerLogo'>
           <IconGroup options={iconType}/>
+          </div>
         </div>
       </div>
     </div>
