@@ -3,14 +3,6 @@
 .menuWrapper {
   display: flex;
   flex-direction: column;
-  // padding-top: 50px;
-  // padding-left: 88px;
-  // padding-right: 88px;
-
-  @media (max-width: 767px) {
-    // padding-left: 10px;
-    // padding-right: 10px;
-  }
 }
 
 .menuText{

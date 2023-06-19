@@ -5,11 +5,9 @@ import { Menu } from 'components/Menu'
 import { Locations } from 'components/Locations'
 import { Reviews } from 'components/Reviews'
 import { useState, useEffect, useRef } from 'react'
-import { Link as ScrollLink } from 'react-scroll'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Icon } from 'ui-kit'
-import { useParams } from 'react-router-dom'
 import { handleScroll } from 'components/NavBar/NavBar'
 
 

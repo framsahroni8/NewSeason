@@ -1,4 +1,4 @@
-import { Router, Routes, Route, Navigate, useLocation, Link, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import {
   Contact,
   GoFoodPage,

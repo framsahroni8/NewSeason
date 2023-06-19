@@ -6,7 +6,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css' // Impor stylesheet AOS
 import { useEffect } from 'react'
 
-const Contact = () => {
+const Contact  = () => {
   useEffect(() => {
     AOS.init()
   }, [])

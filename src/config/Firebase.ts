@@ -99,7 +99,7 @@ const fetchImagesFromPathAndSaveToFirestore = async (path : string) => {
   }
 }
 
-const path = 'gs://manadong-website.appspot.com/Menu'
+const path = 'gs://manadong-website.appspot.com/Logo'
 fetchImagesFromPathAndSaveToFirestore(path)
 .then(() => {
   console.log('Image URLs fetched and saved successfully.')
@@ -109,6 +109,6 @@ fetchImagesFromPathAndSaveToFirestore(path)
   console.log('Error fetching images and saving URLs:', error)
   // Tangani kesalahan yang terjadi saat mengambil URL gambar atau menyimpan URL ke Firestore.
 }) 
-*/}
+ */}
 
 export default firebaseConfig;

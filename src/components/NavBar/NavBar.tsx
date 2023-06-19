@@ -7,9 +7,10 @@ import { Link as ScrollLink } from 'react-scroll'
 
 const navigationData = [
   { name: 'Eatery', href: '#', current: true },
+  { name: 'News', href: '/news', current: false },
   { name: 'Menu', href: 'menuSection', current: false },
-  { name: 'Locations', href: 'locations', current: false },
-  { name: 'Contact', href: 'contact', current: false },
+  { name: 'Locations', href: '/locations', current: false },
+  { name: 'Contact', href: '/contact', current: false },
 ]
 
 export const handleScroll = () => {
