@@ -1,16 +1,16 @@
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './NavBar.scss'
-import { Button } from 'ui-kit'
+import { Button, Icon } from 'ui-kit'
 import Logo from '../../assets/logo/logo-navbar.png'
 import { useState } from 'react'
 import { Link as ScrollLink } from 'react-scroll'
+import DropdownGeneral, { IDropdownOptions } from 'ui-kit/Dropdown_General/Dropdown_General'
+import { logout } from 'utils/redux/slice/login.slice'
+import { useDispatch } from 'react-redux'
+import { useAuth } from 'utils/getAuth'
 
 const navigationData = [
   { name: 'Eatery', href: '#', current: true },
-  { name: 'News', href: '/news', current: false },
-  { name: 'Menu', href: 'menuSection', current: false },
-  { name: 'Locations', href: '/locations', current: false },
-  { name: 'Contact', href: '/contact', current: false },
 ]
 
 export const handleScroll = () => {
@@ -27,32 +27,27 @@ export const handleScroll = () => {
 }
 
 const Navbar = () => {
+  const dispatch = useDispatch()
+  const { auth, user } = useAuth()
   const navigate = useNavigate()
   const [activePage, setActivePage] = useState('home')
 
-  const updatedNavigationData = navigationData.map((item) => ({
-    ...item,
-    current: item.name === activePage,
-  }))
-
-  const handleOrder = () => {
-    navigate('/order')
-    setActivePage('home')
-  }
-  
   const handleLogo = () => {
     navigate('/')
     setActivePage('home')
   }
 
-  const handleNavbarMenu = (name: string) => {
-    console.log('kepanggil' + name)
-    setActivePage(name)
-  }
+  const optionsDropdown: IDropdownOptions[] = [
+    {
+      id: 1,
+      title: 'logout',
+      childIcon: 'Dropdown',
+    }
+  ]
 
   return (
     <>
-      <div className='bg-primary text-base-100-content h-[60px] pb-5 px-4'>
+      <div className='bg-primary text-base-100-content h-[100px] pb-5 px-4'>
         <div className='navbar mx-auto navContainer'>
           <div className='navbar-start navbar-responsive w-full'>
             <div className='dropdown'>
@@ -72,7 +67,28 @@ const Navbar = () => {
                   />
                 </svg>
               </label>
-              <ul
+            </div>
+            <div className='navbar-logo flex items-center h-[100px] max-lg:justify-center'>
+              <img src={Logo} className='w-[140px]' onClick={handleLogo} />
+            </div>
+          </div>
+          <div className='flex gap-[23px]'>
+            <Icon type='Setting' />
+            <Icon type='Notification' />
+          </div>
+          <div className='flex-none'>
+           <DropdownGeneral dropdownType='normal' parentIcon='User' options={optionsDropdown}>
+            {user ? user.username : 'Username'}
+           </DropdownGeneral>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default Navbar
+  {/* <ul
                 tabIndex={0}
                 className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52 pr-[200px] hidden max-lg:flex'
               >
@@ -81,15 +97,8 @@ const Navbar = () => {
                     <NavLink to={item.href}>{item.name}</NavLink>
                   </li>
                 ))}
-              </ul>
-            </div>
-            <div className='navbar-logo max-lg:justify-center'>
-              <img src={Logo} className='w-[80px]' onClick={handleLogo} />
-            </div>
-          </div>
-
-          <div className='navHidden'>
-            <ul className='menu menu-horizontal px-1 hidden lg:flex'>
+              </ul> */}
+{/* <ul className='menu menu-horizontal px-1 hidden lg:flex'>
               {updatedNavigationData.map((item) => (
                 <li className={item.name === 'Eatery' ? '' : item.current ? 'navActive' : ''} key={item.name}>
                   {item.name === 'Menu' ? (
@@ -109,15 +118,4 @@ const Navbar = () => {
                   )}
                 </li>
               ))}
-            </ul>
-            <Button className='btn-navbar'  onClick={handleOrder}>
-              Order Now
-            </Button>
-          </div>
-        </div>
-      </div>
-    </>
-  )
-}
-
-export default Navbar
+            </ul> */}

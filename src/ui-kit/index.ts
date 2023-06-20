@@ -1,6 +1,7 @@
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
+import { DropdownGeneral } from './Dropdown_General';
 import Icon from './Icon'
 import IconButton from './Button/IconButton';
 import LocationDetailComponent  from './LocationDetailComponent';
@@ -20,6 +21,7 @@ export {
   Breadcrumbs,
   Button,
   ButtonGroup,
+  DropdownGeneral,
   Icon,
   IconButton,
   LocationDetailComponent,

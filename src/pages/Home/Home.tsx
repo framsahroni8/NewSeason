@@ -13,54 +13,54 @@ import { handleScroll } from 'components/NavBar/NavBar'
 
 
 const Home = () => {
-  const menuSectionRef = useRef<HTMLDivElement>(null);
+  // const menuSectionRef = useRef<HTMLDivElement>(null);
 
-  const [fadeIn, setFadeIn] = useState<boolean>(false)
-  const [isScrollingDown, setIsScrollingDown] = useState<boolean>(false)
+  // const [fadeIn, setFadeIn] = useState<boolean>(false)
+  // const [isScrollingDown, setIsScrollingDown] = useState<boolean>(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      setIsScrollingDown(scrollPosition > 0)
-    }
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY
+  //     setIsScrollingDown(scrollPosition > 0)
+  //   }
 
-    window.addEventListener('scroll', handleScroll)
+  //   window.addEventListener('scroll', handleScroll)
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [])
 
-  useEffect(() => {
-    AOS.init()
-    const handleScrollAnimation = () => {
-      const scrollPosition = window.scrollY
-      const targetElement = document.getElementById('menuSection')
+  // useEffect(() => {
+  //   AOS.init()
+  //   const handleScrollAnimation = () => {
+  //     const scrollPosition = window.scrollY
+  //     const targetElement = document.getElementById('menuSection')
 
-      if (targetElement) {
-        const targetPosition = targetElement.offsetTop
-        const targetHeight = targetElement.offsetHeight
+  //     if (targetElement) {
+  //       const targetPosition = targetElement.offsetTop
+  //       const targetHeight = targetElement.offsetHeight
 
-        if (
-          scrollPosition >= targetPosition - window.innerHeight / 2 &&
-          scrollPosition <= targetPosition + targetHeight
-        ) {
-          setFadeIn(true)
-        } else {
-          setFadeIn(false)
-        }
-      }
-    }
+  //       if (
+  //         scrollPosition >= targetPosition - window.innerHeight / 2 &&
+  //         scrollPosition <= targetPosition + targetHeight
+  //       ) {
+  //         setFadeIn(true)
+  //       } else {
+  //         setFadeIn(false)
+  //       }
+  //     }
+  //   }
 
-    window.addEventListener('scroll', handleScrollAnimation)
-    return () => {
-      window.removeEventListener('scroll', handleScrollAnimation)
-    }
-  }, [])
+  //   window.addEventListener('scroll', handleScrollAnimation)
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScrollAnimation)
+  //   }
+  // }, [])
 
   return (
     <>
-      <div className='w-full flex flex-col items-center'>
+      {/* <div className='w-full flex flex-col items-center'>
         <div className='w-full'>
           <Headline />
         </div>
@@ -96,7 +96,7 @@ const Home = () => {
               </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

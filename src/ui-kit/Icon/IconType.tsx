@@ -7,6 +7,8 @@ import { ReactComponent as Checkbox } from '../assets/icons/Checkbox.svg'
 import { ReactComponent as Close } from '../assets/icons/Close.svg'
 import { ReactComponent as Copy } from '../assets/icons/Copy.svg'
 import { ReactComponent as Down } from '../assets/icons/Down.svg'
+import { ReactComponent as Dropdown} from '../assets/icons/Dropdown.svg'
+import { ReactComponent as Dropdown_disabled} from '../assets/icons/Dropdown_disabled.svg'
 import { ReactComponent as Edit } from '../assets/icons/Edit.svg'
 import { ReactComponent as Exit } from '../assets/icons/Exit.svg'
 import { ReactComponent as Facebook} from '../assets/icons/Facebook.svg'
@@ -17,13 +19,16 @@ import { ReactComponent as Instagram } from '../assets/icons/Instagram.svg'
 import { ReactComponent as Location} from '../assets/icons/Location.svg'
 import { ReactComponent as Message} from '../assets/icons/Message.svg'
 import { ReactComponent as Minus } from '../assets/icons/Minus.svg'
+import { ReactComponent as Notification} from '../assets/icons/notifications.svg'
 import { ReactComponent as Pdf } from '../assets/icons/files/Pdf.svg'
 import { ReactComponent as Plus } from '../assets/icons/Plus.svg'
 import { ReactComponent as Search } from '../assets/icons/Search.svg'
+import { ReactComponent as Setting} from '../assets/icons/settings.svg'
 import { ReactComponent as ShopeeFood} from '../assets/icons/ShopeeFood.svg'
 import { ReactComponent as Spinner } from '../assets/icons/Spinner.svg'
 import { ReactComponent as Telegram } from '../assets/icons/Telegram.svg'
 import { ReactComponent as Twitter} from '../assets/icons/Twitter.svg'
+import { ReactComponent as User} from '../assets/icons/profile.svg'
 import { ReactComponent as Visibility } from '../assets/icons/Visibility.svg'
 import { ReactComponent as VisibilityOff } from '../assets/icons/VisibilityOff.svg'
 import { ReactComponent as WhatsApp} from '../assets/icons/WhatsApp.svg'
@@ -37,6 +42,8 @@ export type IconType =
   | 'Close'
   | 'Copy'
   | 'Down'
+  | 'Dropdown'
+  | 'Dropdown_disabled'
   | 'Edit'
   | 'Exit'
   | 'Facebook'
@@ -47,13 +54,16 @@ export type IconType =
   | 'Location'
   | 'Message'
   | 'Minus'
+  | 'Notification'
   | 'Pdf'
   | 'Plus'
   | 'Search'
+  | 'Setting'
   | 'ShopeeFood'
   | 'Spinner'
   | 'Telegram'
   | 'Twitter'
+  | 'User'
   | 'Visibility'
   | 'VisibilityOff'
   | 'WhatsApp'
@@ -67,6 +77,8 @@ export const iconTypes = new Map([
   ['Close', <Close key={newGuid()} />],
   ['Copy', <Copy key={newGuid()} />],
   ['Down', <Down key={newGuid()} />],
+  ['Dropdown', <Dropdown key={newGuid()} />],
+  ['Dropdown_disabled', <Dropdown_disabled key={newGuid()} />],
   ['Edit', <Edit key={newGuid()} />],
   ['Exit', <Exit key={newGuid()} />],
   ['Facebook', <Facebook key={newGuid()} />],
@@ -77,13 +89,16 @@ export const iconTypes = new Map([
   ['Location', <Location key={newGuid()} />],
   ['Message', <Message key={newGuid()} />],
   ['Minus', <Minus key={newGuid()} />],
+  ['Notification', <Notification key={newGuid()} />],
   ['Pdf', <Pdf key={newGuid()} />],
   ['Plus', <Plus key={newGuid()} />],
   ['Search', <Search key={newGuid()} />],
+  ['Setting', <Setting key={newGuid()} />],
   ['ShopeeFood', <ShopeeFood key={newGuid()} />],
   ['Spinner', <Spinner key={newGuid()} />],
   ['Telegram', <Telegram key={newGuid()} />],
   ['Twitter', <Twitter key={newGuid()} />],
+  ['User', <User key={newGuid()} />],
   ['Visibility', <Visibility key={newGuid()} />],
   ['VisibilityOff', <VisibilityOff key={newGuid()} />],
   ['WhatsApp', <WhatsApp key={newGuid()} />],
