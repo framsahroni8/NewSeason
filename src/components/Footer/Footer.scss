@@ -57,6 +57,7 @@
   gap: 20px;
   display: flex;
   align-items: center;
+  margin-top: 6px;
   svg path {
     fill: $color-primary;
   }
@@ -67,5 +68,6 @@
   @media (max-width: 767px) {
     gap: 8px;
     padding-top: 14px;
+    margin-top: -4px;
   }
 }
