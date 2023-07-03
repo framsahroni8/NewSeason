@@ -5,18 +5,20 @@ import {
   GrabFood,
   Home,
   LocationPage,
+  MainPage,
   NotFound,
   OrderPage,
   ShopeeFood,
 } from 'pages'
+import { Eatery } from 'components/Eatery'
 
 const MainRoutes = () => {
   return (
     <>
       <Routes>
         <Route>
-          <Route path='/' element={<Home />} />
-          <Route path='home' element={<Home />} />
+          <Route path='/' element={<MainPage />} />
+          {/* <Route path='home' element={<Home />} />
           <Route path='menuSection' element={<Home/>}/>
           <Route path='locations' element={<LocationPage />} />
           <Route path='contact' element={<Contact />} />
@@ -24,6 +26,7 @@ const MainRoutes = () => {
           <Route path='gofood' element={<GoFoodPage />} />
           <Route path='grabfood' element={<GrabFood />} />
           <Route path='shopeefood' element={<ShopeeFood />} />
+          <Route path='eatery' element={<Eatery />} /> */}
         </Route>
         {/** Permission denied route */}
         <Route path='/denied' element={<NotFound />} />

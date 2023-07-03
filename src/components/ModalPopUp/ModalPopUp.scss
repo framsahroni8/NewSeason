@@ -1,0 +1,140 @@
+@import 'ui-kit/styles';
+
+.modals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &.fade-in {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  
+    /* Transisi saat muncul */
+    &.fade-in.active {
+      opacity: 1;
+    }  
+  }
+  .modals.active {
+    opacity: 1;
+    animation: none;
+  }
+  .modals-content {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%;
+    width: 900px;
+    height: 500px;
+    justify-content: space-between;
+  }
+
+  .modals-text{
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .modals-header {
+    background-color: blue;
+    display: flex;
+    height: 40px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: space-between;
+  }
+
+  .modals-icon{
+    display: flex;
+    gap: 15px;
+    height: 20px;
+   
+  }
+
+  .foto{
+    cursor: pointer;
+  }
+  
+  .modals-body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    padding: 20px;
+    overflow-y: auto; /* Menampilkan scrollbar jika kontennya terlalu panjang */
+  }
+
+  .modals-center {
+    /* Stying untuk komponen yang harus berada di tengah */
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .modals-foto{
+    width: 250px;
+    height: 300px;
+    // opacity: 0; /* Mulai dengan keadaan tersembunyi */
+  transition: opacity 0.5s ease; /* Efek transisi dengan durasi 0.5 detik */
+
+  }
+  
+  /* Tambahkan animasi blink untuk tanda "|" */
+@keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Modifikasi styling untuk teks yang sedang ditulis */
+  .typing-text {
+    display: inline-block;
+    position: relative;
+    word-break: normal;
+  }
+  
+  .typing-text::after {
+    content: "|";
+    // position: absolute;
+    right: -0.2em;
+    animation: blink 1s infinite;
+  }
+  
+  .btnLink{
+    background-color: $color-success-darken !important;
+    border: none !important;
+    // opacity: 0; /* Mulai dengan keadaan tersembunyi */
+  transition: opacity 0.5s ease; /* Efek transisi dengan durasi 0.5 detik */
+
+    &:hover{
+      background-color: $color-success-hovered !important;
+    }
+
+    &:active{
+      background-color: $color-success-pressed !important;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

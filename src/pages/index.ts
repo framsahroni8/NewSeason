@@ -9,5 +9,6 @@ import { ShopeeFood } from './OutletPage/ShopeeFood'
 import { Login } from './Login'
 import { NotFound } from './NotFound'
 import { SecondPage } from './SecondPage'
+import { MainPage } from './MainPage'
 
-export { Home, Contact, LocationPage, OrderPage, GoFoodPage, GrabFood, ShopeeFood, Login, NotFound, SecondPage }
+export { Home, Contact, LocationPage, OrderPage, GoFoodPage, GrabFood, ShopeeFood, Login, NotFound, SecondPage, MainPage }

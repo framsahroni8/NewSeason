@@ -179,3 +179,39 @@ $base-font-family: "Soin Sans Neue", sans-serif;
   font-style: normal;
   line-height: 1.25;
 }
+
+/* SoinSansNeue/72/Bold */
+@mixin SoinSansNeue-72-bold {
+  font-family: $base-font-family;
+  font-size: 72px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* SoinSansNeue/88/Bold */
+@mixin SoinSansNeue-88-bold {
+  font-family: $base-font-family;
+  font-size: 88px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* SoinSansNeue/110/Bold */
+@mixin SoinSansNeue-110-bold {
+  font-family: $base-font-family;
+  font-size: 110px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* SoinSansNeue/150/Bold */
+@mixin SoinSansNeue-150-bold {
+  font-family: $base-font-family;
+  font-size: 110px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
