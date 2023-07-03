@@ -1,0 +1,13 @@
+@import 'ui-kit/styles';
+
+.pageMain{
+    background-color: $color-pacific-blue;
+}
+
+.textMain{
+    @include SoinSansNeue-24-bold;
+}
+
+.textHP{
+    @include SoinSansNeue-48-bold;
+}

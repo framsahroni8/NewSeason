@@ -18,6 +18,7 @@ $color-disabled-secondary: rgba(245, 245, 245, 1);
 
 /*Orange*/
 $color-orange: rgba(238, 78, 45, 1); /*#EE4E2D*/
+$color-bright-orange: #FF9F1C;
 
 $color-text: rgba(51, 51, 51, 1);
 /* #333 */
@@ -27,7 +28,11 @@ $color-text-secondary: rgba(122, 122, 122, 1);
 /*Blue*/
 $color-blue-darken: rgba(0, 71, 137, 1);
 /*#004789*/
+<<<<<<< HEAD
 $color-blue-primary: rgba(74, 124, 220, 1); /* #4A7CDC */
+=======
+$color-pacific-blue: #354E56;
+>>>>>>> b8a117df9a39d44827d2b2e87e1e107099703225
 
 /* Gray */
 $color-dark-gray: rgba(185, 181, 181, 1);
@@ -60,6 +65,7 @@ $color-success-hovered: #92EAB0;
 $color-success-outline: #C9F4D8;
 $color-success-surface: #DEF9E7;
 $color-success-focused: rgba(92, 223, 137, 0.2);
+$color-sage : #B2AC88;
 $color-modal: rgba(30, 190, 165, 1) ; /*#1EBEA5*/
 
 /* Other */
@@ -71,3 +77,4 @@ $color-headline: rgba(253, 216, 205, 1);
 /* #FDD8CD */
 $color-footer: rgba(0, 46, 89, 1);
 /*#002E59*/
+$color-deap-teal: #19747E;

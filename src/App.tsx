@@ -32,11 +32,16 @@ function App() {
     <Provider store={store}>
       <div className='App'>
         <BrowserRouter>
+<<<<<<< HEAD
           <NavBar />
           <div className='flex'>
           <SideBar options={sideData}/>
           <MainRoutes />
           </div>
+=======
+          {/* <NavBar /> */}
+          <MainRoutes />
+>>>>>>> b8a117df9a39d44827d2b2e87e1e107099703225
           {/* <Footer /> */}
         </BrowserRouter>
       </div>

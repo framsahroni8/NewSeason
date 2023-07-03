@@ -10,7 +10,15 @@ import { useDispatch } from 'react-redux'
 import { useAuth } from 'utils/getAuth'
 
 const navigationData = [
+<<<<<<< HEAD
   { name: 'Eatery', href: '#', current: true },
+=======
+  { name: 'Eatery', href: '/eatery', current: false },
+  { name: 'News', href: 'http://blog.manadong.id/', current: false },
+  { name: 'Menu', href: 'menuSection', current: false },
+  { name: 'Locations', href: '/locations', current: false },
+  { name: 'Contact', href: '/contact', current: false },
+>>>>>>> b8a117df9a39d44827d2b2e87e1e107099703225
 ]
 
 export const handleScroll = () => {

@@ -1,0 +1,85 @@
+@import 'ui-kit/styles';
+
+
+.fotoUtama{
+
+  background-color: $color-bright-orange;
+}
+
+.imageMainContainer {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  border: 15px solid  #80B918;
+  animation: color-change 5s infinite;
+}
+.imageMainContainer::before,
+.imageMainContainer::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+
+}
+
+.imageMainContainer::before {
+  z-index: -1;
+}
+
+.imageMainContainer::after {
+  z-index: -2;
+  animation: color-change 5s infinite;
+}
+
+.animasiMuter {
+  animation: putar-animasi 8s linear infinite;
+
+}
+
+.textChange{
+  @include SoinSansNeue-150-bold;
+  width: 400px;
+  height: 400px;
+  color: $color-deap-teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes putar-animasi {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes glowing-border {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes color-change {
+  0% {
+    border-color: red;
+  }
+  25% {
+    border-color: blue;
+  }
+  50% {
+    border-color: green;
+  }
+  75% {
+    border-color: yellow;
+  }
+  100% {
+    border-color: purple;
+  }
+}
